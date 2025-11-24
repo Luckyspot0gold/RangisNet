@@ -12,3 +12,41 @@ HDL is designed to:
 ---
 
 ## 1. HDL Packet Structure
+---
+
+## 2. HDL Transport Paths
+
+HDL can use:
+- Oracle networks  
+- Bridge relayers  
+- Subnet connectors  
+- IBC-like pipes (for Cosmos)  
+- AVAX Warp Messaging  
+- EigenLayer operators  
+- Off-chain pub/sub networks  
+
+---
+
+## 3. Sensory Preservation
+
+HDL ensures:
+- harmonic vectors remain intact,  
+- timbre codes don’t drift,  
+- fingerprints maintain meaning.
+
+This allows:
+- Solana apps to “feel” AVAX volatility,  
+- ETH bots to “hear” Rangi network congestion,  
+- VR worlds to react to cross-chain flows.
+
+---
+
+## 4. HDL Benefits
+
+- chain-agnostic  
+- lightweight  
+- fast  
+- human-friendly  
+- machine-friendly  
+
+HDL is the **cross-chain harmonic bloodstream.**
