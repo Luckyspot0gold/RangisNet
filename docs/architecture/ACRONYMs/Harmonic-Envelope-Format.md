@@ -90,3 +90,18 @@ HEF is the **universal language of harmonic markets**.
 - sidecar files  
 
 HEF is the package that moves harmonics through the network.
+interface HarmonicEnvelope {
+    assetId: string;
+    stateVector: {
+        volatility: number;
+        liquidity: number; 
+        volume: number;
+        velocity: number;
+    };
+    harmonicFingerprint: {
+        frequency: number;
+        amplitude: number;
+        timbre: number;
+        rhythm: number;
+    };
+}
