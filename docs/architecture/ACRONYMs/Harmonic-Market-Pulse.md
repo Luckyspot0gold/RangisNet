@@ -36,3 +36,13 @@ of the market.
 ---
 
 ## 3. Pulse Mechanics
+---
+
+## 4. Use Cases
+
+- portfolio-level mood  
+- market overview dashboard  
+- algorithmic strategies  
+- emotional UX cues  
+
+HMP is the **macro harmonic** — the big picture heartbeat.
