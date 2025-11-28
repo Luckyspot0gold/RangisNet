@@ -9,3 +9,9 @@ async function main() {
   console.log("RealityCapsule:", await rc.getAddress());
 }
 main().catch((e)=>{ console.error(e); process.exit(1); });
+cd contracts
+npm i
+cp .env.example .env   # fill in PRIVATE_KEY
+npm run build
+npm run deploy:fuji    # save the printed address
+cd ..
