@@ -32,3 +32,6 @@ function validateEnvironment() {
 
 // Run validation
 validateEnvironment();
+cd web
+cp .env.local.example .env.local   # put contract address
+npm run dev
