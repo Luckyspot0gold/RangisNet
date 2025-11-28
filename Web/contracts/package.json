@@ -17,3 +17,11 @@
     "typescript": "^5.6.3"
   }
 }
+{
+  "scripts": {
+    "validate:env": "tsx scripts/validate-env.ts",
+    "dev": "npm run validate:env && next dev",
+    "build": "npm run validate:env && next build",
+    "harmonic:deploy": "npm run validate:env && hardhat run scripts/deploy.ts --network avalanche"
+  }
+}
