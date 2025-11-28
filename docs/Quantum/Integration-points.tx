@@ -1,0 +1,13 @@
+
+## 📈 M3 — McCrea Market Metrics
+
+```markdown
+# M3 — McCrea Market Metrics
+_Proprietary Harmonic Indices for Market Intelligence_
+
+## Core Metrics
+
+### HVI - Harmonic Volatility Index
+**Purpose:** Measure market instability through frequency variance
+```javascript
+HVI = (σ_frequency / μ_frequency) × amplitude_instability × time_decay

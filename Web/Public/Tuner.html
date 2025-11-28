@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangisNet Tuner - Harmonic AVAX Insights</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        h1 { text-align: center; margin-bottom: 20px; }
+        .controls { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 20px; }
+        select, button { padding: 10px; font-size: 16px; border: none; border-radius: 5px; background: rgba(255,255,255,0.2); color: white; }
+        button { background: #00d4aa; color: black; cursor: pointer; transition: background 0.3s; }
+        button:hover { background: #00b894; }
+        button:disabled { background: gray; cursor: not-allowed; }
+        audio { display: none; } /* Hidden player */
+        .status { text-align: center; font-style: italic; margin-top: 10px; }
+        @media (max-width: 600px) { .controls { width: 100%; } }
+    </style>
+</head>
+<body>
+    <h1>🔔 RangisNet Harmonic Tuner</h1>
+    <p style="text-align: center; max-width: 400px;">Tune Avalanche metrics (e.g., stability_index from McCrea Metrics™) to 7-Bell Synth tones. Preview sonification for x402 agent payments.</p>
+    
+    <div class="controls">
+        <label for="metric">Select AVAX Metric:</label>
+        <select id="metric">
+            <option value="stability">Stability Index (432 Hz Base)</option>
+            <option value="risk">Execution Risk (466 Hz Alert)</option>
+            <option value="liquidity">Harmonic Liquidity (512 Hz Flow)</option>
+            <option value="heartbeat">Network Heartbeat (Custom Blend)</option>
+        </select>
+        
+        <label for="bell">Choose Bell (1-7):</label>
+        <select id="bell">
+            <option value="1">Bell 1 (Low Resonance)</option>
+            <option value="2">Bell 2</option>
+            <option value="3">Bell 3</option>
+            <option value="4">Bell 4 (Mid Stability)</option>
+            <option value="5">Bell 5</option>
+            <option value="6">Bell 6 (High Alert)</option>
+            <option value="7">Bell 7 (Full Harmonic)</option>
+        </select>
+        
+        <button id="playBtn">Play Tuned Harmonic</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <audio id="player" preload="auto"></audio>
+
+    <script>
+        const synthUrls = [
+            'https://your-domain.com/synths/bell1.mp3',  // Update with your HTTPS MP3/AAC paths
+            'https://your-domain.com/synths/bell2.mp3',
+            'https://your-domain.com/synths/bell3.mp3',
+            'https://your-domain.com/synths/bell4.mp3',
+            'https://your-domain.com/synths/bell5.mp3',
+            'https://your-domain.com/synths/bell6.mp3',
+            'https://your-domain.com/synths/bell7.mp3'
+        ];
+
+        const metricFrequencies = {  // Tie to McCrea Metrics™ for demo
+            stability: 432,
+            risk: 466,
+            liquidity: 512,
+            heartbeat: 528  // Solfeggio-inspired for network pulse
+        };
+
+        const player = document.getElementById('player');
+        const playBtn = document.getElementById('playBtn');
+        const metricSelect = document.getElementById('metric');
+        const bellSelect = document.getElementById('bell');
+        const status = document.getElementById('status');
+
+        playBtn.addEventListener('click', async () => {
+            const metric = metricSelect.value;
+            const bellIndex = parseInt(bellSelect.value) - 1;
+            const url = synthUrls[bellIndex];
+
+            if (!url) {
+                status.textContent = 'Synth file not found—check URLs!';
+                return;
+            }
+
+            playBtn.disabled = true;
+            playBtn.textContent = 'Playing...';
+            status.textContent = `Tuning ${metric.toUpperCase()} to Bell ${bellSelect.value} (${metricFrequencies[metric]} Hz base)`;
+
+            try {
+                player.src = url;
+                player.play();
+                // Optional: Haptic feedback for mobile (x402 agent vibe)
+                if (navigator.vibrate) navigator.vibrate(200);
+                
+                player.onended = () => {
+                    playBtn.disabled = false;
+                    playBtn.textContent = 'Play Tuned Harmonic';
+                    status.textContent = 'Tune complete—Sonic Event Code emitted!';
+                    // Simulate Sonic Event Code™ output
+                    console.log(JSON.stringify({
+                        chain: 'Avalanche',
+                        metric,
+                        bell: bellSelect.value,
+                        frequency: metricFrequencies[metric],
+                        signal_mode: 'tuned'
+                    }, null, 2));
+                };
+            } catch (err) {
+                status.textContent = `Playback error: ${err.message}`;
+                playBtn.disabled = false;
+                playBtn.textContent = 'Play Tuned Harmonic';
+            }
+        });
+
+        // Auto-tune demo: Poll Avalanche RPC for live data (integrate your harmonic-stream.js)
+        async function autoTuneDemo() {
+            // Placeholder: Fetch real AVAX stability_index via RPC
+            const mockStability = Math.random();  // Replace with await fetchAvalancheData()
+            if (mockStability > 0.8) {
+                bellSelect.value = '7';  // High bell for strong signal
+                status.textContent = `Auto-tuned: High stability detected (${mockStability.toFixed(2)})`;
+            }
+        }
+        setInterval(autoTuneDemo, 5000);  // Poll every 5s for demo
+    </script>
+</body>
+</html>
