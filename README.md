@@ -1,258 +1,301 @@
-# 🌈 RangisNet
+---
 
-### The Blockchain You Can Hear, Feel, and Understand  
-**Avalanche X-402 Hackathon Edition – 2025**
+📄 README.md  — Avalanche X402 Hackathon Edition
 
-RangisNet is a **sonified execution and cognition layer for blockchains**, starting with **Avalanche**.
+# 🌈 RangisNet  
+### A Harmonic Execution & Asset Cognition Layer for Avalanche  
+**Avalanche X402 Hackathon – December 2025 Submission**
 
-Instead of only using charts and numbers, RangisNet turns live on-chain and market data into:
+RangisNet transforms Avalanche blockchain activity into **real-time, multi-sensory intelligence** using sound, color, resonance patterns, and harmonic signals.
 
-- 🎧 **Sound** – tones, chords, pulses  
-- 🌈 **Color** – harmonic gradients and heatmaps  
-- 📳 **Touch** – haptic intensity and vibration patterns  
+Instead of charts…  
+→ **You can hear volatility**  
+→ **You can feel congestion**  
+→ **You can see risk as color**  
+→ **You can sense network health**
 
-So that:
-
-- Beginners  
-- Pros  
-- Kids  
-- Adults  
-- And people with disabilities  
-
-can **feel and hear** what the network is doing – congestion, volatility, fees, risk – **without staring at charts**.
+RangisNet is designed for **accessibility, intuition, and next-generation interaction** with Avalanche networks.
 
 ---
 
-## 🧠 Why RangisNet Matters
+## 🧠 What RangisNet Does
+RangisNet is a **Harmonic Execution Layer™** and **Asset Cognition Engine** that reads Avalanche network data, interprets it using the **McCrea Market Metrics™**, and outputs a compact, multi-sensory “Rangi Signal.”
 
-Today’s blockchains speak in:
-- gas,
-- TPS,
-- latency,
-- mempools,
-- order books,
-- and price feeds.
+RangisNet turns Avalanche blockchain data into:
 
-That language is powerful but **not human-friendly**.
+- 🎧 **Audio Signatures** – tone, pitch, resonance  
+- 🌈 **Visual Signatures** – harmonic color spectrum & gradients  
+- 📳 **Haptic Signatures** – vibration intensity and cadence  
+- 💾 **Sonic Event Codes™** – structured, machine-readable cues  
 
-RangisNet translates this machine language into **multi-sensory intuition**:
+These signals provide insight into:
 
-- When the market is **calm** → it hums and glows softly  
-- When risk is **rising** → tones get sharper, colors tighten, haptics buzz  
-- When a transaction is **likely to fail or spike in cost** → you feel a warning rumble  
-- When a subnet is **healthy and efficient** → you get a stable, harmonic “green zone”  
+- Risk  
+- Volatility  
+- Network congestion  
+- Transaction comfort level  
+- Execution health  
 
-It’s like giving Avalanche a **heartbeat and a voice**.
-
-This is especially useful for:
-- **Accessibility-first interfaces** (audio/haptic-based traders, low-vision users)  
-- **New users** who don’t understand gas, mempools, or slippage yet  
-- **Power users** who want a second, intuitive signal layer on top of their charts  
+All in real time.
 
 ---
 
-## ⚙️ What Is RangisNet?
+## ⚡ Avalanche-Focused Capabilities
 
-RangisNet is a **Harmonic Execution Layer™** and **Market Asset Cognition Engine**.
+RangisNet connects directly to Avalanche:
 
-At a high level, RangisNet:
+### **C-Chain Data**
+- Gas prices  
+- TPS  
+- Mempool depth  
+- Latency  
+- Block health  
 
-1. 🛰️ **Reads data** from Avalanche:
-   - C-Chain / Subnets RPC metrics  
-   - Block times, fees, TPS, mempool pressure  
-   - Price and volatility of selected assets (e.g., AVAX, stables, major pairs)
+### **Subnet Data**
+- Validator performance  
+- Fee markets  
+- Subnet congestion  
+- Network health scoring  
 
-2. 🧮 **Computes McCrea Market Metrics™**:
-   - Volatility and momentum  
-   - Congestion and fee pressure  
-   - Liquidity and depth signals  
-   - Custom risk/comfort indicators
+### **Economic Data**
+(From supported oracles)
+- AVAX price  
+- Liquidity metrics  
+- Volatility indexes  
 
-3. 🎶 **Compresses into Harmonic Fingerprints**:
-   - Frequency bands  
-   - Resonance levels  
-   - “Danger / Comfort” harmonic envelopes  
-
-4. 🔔 **Emits Sonic Event Codes™**:
-   - Tones, chords, pulses  
-   - Color gradients and visual states  
-   - Haptic intensity and patterns  
-
-5. 🔌 **Streams to Clients & Apps**:
-   - Dashboards  
-   - Wallet overlays  
-   - Games / DeFi frontends  
-   - Assistive interfaces  
-
-The result: a **plug-and-play sensory layer** that any Avalanche app can subscribe to.
+This is converted into a **Harmonic Fingerprint** and a **Sonic Event Code™**, consumable by wallets, dashboards, games, and accessibility tools.
 
 ---
 
-## 🧱 Avalanche X-402 Hackathon Focus
+## 🧬 Core Technologies
 
-For the **Avalanche X-402 Hackathon**, this repository demonstrates:
+### 🟣 **McCrea Market Metrics™ (MMM)**  
+A proprietary real-time metric engine that translates Avalanche network state into human-interpretable signals:
 
-- ✅ A **data pipeline** from Avalanche RPC into RangisNet  
-- ✅ A **metric engine** that computes proprietary multi-factor signals  
-- ✅ A **harmonic mapper** that converts those signals into:
-  - frequencies,
-  - colors,
-  - and haptic-friendly intensities  
-- ✅ A **developer-friendly JSON API** for other apps to consume  
-- ✅ A **simple front-end demo** showing live or simulated Avalanche conditions as:
-  - audio hints,
-  - color blocks,
-  - and “Rangi Signal” states  
+- `stability_index`  
+- `execution_risk`  
+- `comfort_band`  
+- `hazard_band`  
+- `network_heartbeat`  
+- `harmonic_liquidity_score`  
+- `harmonic_stability_score`  
 
-RangisNet does **not** replace Avalanche consensus – it **augments it** with a new kind of sensory analytics.
+These metrics are computed by code located in:
 
----
-
-## 🧪 Core Concepts & Components
-
-### 1. McCrea Market Metrics™ (MMM)
-
-A proprietary indicators suite under patent development, designed by **Reality Protocol LLC (Justin McCrea)**.  
-These metrics aggregate:
-
-- Price momentum & volatility  
-- Network latency & congestion  
-- Gas pressure & fee spikes  
-- Liquidity / depth estimates  
-
-into a handful of **normalized, human-scale signals**.
-
-Examples (conceptually):
-
-- `stability_index` – how calm or chaotic conditions are  
-- `execution_risk` – how likely costly or failed transactions are  
-- `comfort_band` – the “safe” band for typical users  
-- `alert_band` – the “be careful” or “better wait” band  
-
-These values then feed the harmonic engine.
+engines/metrics/ McCrea-MetricsEngine.py Harmonic-Liquidity-index.js Harmonic-Stability-index.js Tracks.js
 
 ---
 
-### 2. Harmonic Execution Layer™
+### 🔵 **Harmonic Execution Layer™**
+A signal translation engine that converts metrics into:
+- Frequencies  
+- Oscillation patterns  
+- Harmonic envelopes  
+- Timbre  
+- Rangi Resonance Codes  
 
-This layer:
+Located in:
 
-- Maps metrics into **frequencies** (e.g. 432 Hz base, higher bands for risk)  
-- Shapes **harmonic envelopes** that can be rendered as:
-  - short tones,
-  - background hums,
-  - rhythmic pulses  
-- Encodes these into **Sonic Event Codes™**:
-  ```json
-  {
-    "symbol": "AVAX",
-    "stability_index": 0.21,
-    "execution_risk": 0.82,
-    "harmonics": [432, 466, 512],
-    "intensity": 0.9,
-    "mode": "alert",
-    "rangiSignal": "0x7f3a19..."
-  }
+engines/ranginet/ engines/realtime/ websocket/harmonic-stream.js
 
-Frontends can:
-Play these as audio,
-Use them to drive color gradients,
-Use intensity to drive haptics (e.g., phone vibrations).
+---
 
-3. Sonic Event Codes™ & Harmonic Envelope Format™
-These are compact, structured messages that describe a state of the network in a way that is:
-Machine-readable
-Human-interpretable
-Consistent across chains and environments
-They are the “Morse code” of RangisNet – the signals that carry the heartbeat of Avalanche.
+### 🔴 **Sonic Event Codes™**
+Standardized message packets that describe network state via harmonic data.
 
-🌉 Avalanche & Multi-Chain Support
-RangisNet is blockchain-agnostic by design but optimized for Avalanche:
-🌋 Avalanche:
-C-Chain metrics
-Subnets & validators
-EVM-compatible DeFi protocols
-🌐 Future Targets:
-Ethereum / L2s
-Solana
-Cosmos zones
-Bitcoin L2s
-Any chain that exposes RPC / indexer data
-The sensory layer (harmonics, Sonic Event Codes, Rangi Signals) stays consistent across chains, making it possible to:
-Compare risk/comfort states across networks
-Route activity towards “healthier” chains or subnets
-Build cross-chain dashboards that feel different depending on network health
+Example output:
 
-🧮 Tech Stack
-Core languages & tools (aligned with common hackathon rules):
-TypeScript (core engine & API)
-JavaScript (front-end)
-Python (prototyping and analysis, optional)
-Solidity / Rust / Go (for future on-chain components)
-Avalanche Integration:
-JSON-RPC via ethers / similar
-Compatible with:
-Avalanche C-Chain
-Custom Subnets (via their RPC endpoints)
+```json
+{
+  "chain": "Avalanche",
+  "symbol": "AVAX",
+  "stability_index": 0.22,
+  "execution_risk": 0.81,
+  "harmonics": [432, 466, 512],
+  "intensity": 0.9,
+  "signal_mode": "alert",
+  "rangiSignal": "0x7f3a19..."
+}
 
-🚀 Repo Status
-This repository currently aims to include:
-[x] Vision & concept (this README)
-[x] High-level architecture & specs
-[ ] Prototype metrics engine wired to Avalanche test data
-[ ] Harmonic mapping utilities
-[ ] Sonic Event Code generator
-[ ] Simple web demo (visual + audio)
-[ ] Developer examples:
-“How to hook RangisNet into your dApp”
-⚠️ Note: This is an actively evolving hackathon project. Expect rapid iteration and breaking changes.
+These codes can:
 
-🔒 Protected Innovation
-RangisNet includes proprietary technologies under patent development by: Reality Protocol LLC (Justin McCrea)
-Protected / in-progress concepts include:
-Harmonic Execution Layer™
-McCrea Market Metrics™
-McCrea Quantum Modular System™
-Sonic Event Codes™
-Harmonic Envelope Format™
-Consensus Harmonics™
-See LICENSE for usage, derivative works, and commercial rights.
+Trigger UI animations
 
-🧩 Intended Use Cases
-Wallets – add subtle audio/haptic cues for gas spikes, MEV danger, congestion
-DeFi frontends – give users “risk music” or comfort/resonance tones per pool/token
-Trader dashboards – a second channel of information (sound + color) augmenting charts
-Accessibility tools – allow visually impaired users to interact with markets via sound/touch
-Games & XR – use network health as a dynamic environment parameter (weather, background audio, world mood)
+Play sound
 
-🏗️ Getting Started (Dev)
-Note: the exact commands and code may evolve. Replace with real scripts and paths as the project solidifies.
-# Clone the repo
+Inform accessibility devices
+
+Power trading dashboards
+
+Generate haptic feedback
+
+
+
+---
+
+🏗️ Repository Structure
+
+This repository uses a clean, protocol-grade architecture:
+
+RangisNet/
+│
+├── contracts/              # Solidity (Avalanche / Subnet compatible)
+│   ├── HarmonicConsensus.sol
+│   ├── RealityCapsule.sol
+│   └── Harmonic-Precompile.sol
+│
+├── engines/
+│   ├── metrics/            # McCrea Market Metrics™
+│   ├── realtime/           # Live calculations
+│   └── ranginet/           # Harmonic Execution Layer
+│
+├── avalanche/              # Avalanche RPC integration (added during hackathon)
+│   ├── rpc-client.ts
+│   └── subnet-config.json
+│
+├── web/                    # Next.js interface for demo + harmonics UI
+│   ├── src/app/page.tsx
+│   ├── components/
+│   └── lib/
+│
+├── websocket/
+│   └── harmonic-stream.js
+│
+├── docs/                   # Whitepaper, architecture, analytics, and sensory specs
+│
+├── workflows/
+│   └── ci.yml              # Basic CI pipeline
+│
+├── WHITEPAPER.md
+├── README.md
+└── LICENSE
+
+This layout mirrors real-world blockchain protocol repositories and is optimized for Avalanche developers.
+
+
+---
+
+📡 Data Flow Overview
+
+1. Wallet/app/client connects
+
+
+2. RangisNet collects Avalanche data
+
+
+3. Metrics engine computes McCrea Market Metrics™
+
+
+4. Harmonic Execution Layer™ translates to audio/visual/haptics
+
+
+5. Sonic Event Codes™ are emitted over WebSocket
+
+
+6. Clients receive the Rangi Signal
+
+
+7. User experiences the blockchain through their senses
+
+
+
+
+---
+
+🧩 Why This Helps Users
+
+RangisNet enhances:
+
+⭐ Accessibility
+
+Low-vision and visually impaired users can trade using sound and vibration.
+
+⭐ New User Comprehension
+
+No charts required — users “hear” when risk rises.
+
+⭐ Expert Tools
+
+Traders gain a second sensory channel to detect volatility.
+
+⭐ Avalanche Subnet Builders
+
+Can monitor the “heartbeat” and health of their own networks.
+
+⭐ Games & XR
+
+Blockchain activity becomes an environmental audio or feedback force.
+
+
+---
+
+🛠️ Getting Started (Developer)
+
+Install
+
 git clone https://github.com/Luckyspot0gold/RangisNet.git
 cd RangisNet
-
-# Install dependencies
 npm install
 
-# Run the dev server (example)
+Run the Web Demo
+
 npm run dev
 
-Then open your browser (or terminal client) to see the RangisNet demo:
-A basic dashboard rendering:
-Avalanche network metrics
-Corresponding harmonic fingerprints
-Simple audio/visual output
+This launches a basic visualization and audio synthesizer connected to RangisNet’s harmonic output.
 
-❤️ Credits & Contact
-RangisNet & the broader Reality Protocol ecosystem are created by:
-Justin McCrea – Reality Protocol LLC “Rangi’s Heartbeat” | “Game of Life & Markets” | “Harmonic Finance”
-Handles & Links:
+
+---
+
+🔒 Intellectual Property Notice
+
+RangisNet contains proprietary, patent-pending technologies owned by:
+
+Reality Protocol LLC – Justin McCrea
+
+Harmonic Execution Layer™
+
+McCrea Market Metrics™
+
+McCrea Quantum Modular System™
+
+Sonic Event Codes™
+
+Harmonic Envelope Format™
+
+Consensus Harmonics™
+
+
+See IP-NOTICE.md and LICENSE for rights and usage.
+
+
+---
+
+👤 Author & Contact
+
+Justin McCrea
+Creator of Reality Protocol LLC
+Founder of StoneYard Games / Rangi’s Heartbeat
+
+Links:
+
 X: @Rainbowsandgold
+
 Discord: StoneYard_Games
+
+Telegram: https://t.me/RealityProtocolDemo
+
 Devpost: Luckyspot0gold
-Telegram: t.me/RealityProtocolDemo
-Sites:
+
+Websites:
+
 RealityProtocol.io
+
 RangisHeartbeat.com
+
 CryptoClashers.games
-Made with ❤️, rainbows, and gold. For Avalanche. For everyone.
+
+
+
+Made with ❤️, harmonic physics, and the courage to reimagine blockchain.
+
+---
