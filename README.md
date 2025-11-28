@@ -1,5 +1,3 @@
----
-
 📄 README.md  — Avalanche X402 Hackathon Edition
 
 # 🌈 RangisNet  
@@ -297,5 +295,3 @@ CryptoClashers.games
 
 
 Made with ❤️, harmonic physics, and the courage to reimagine blockchain.
-
----
