@@ -48,3 +48,13 @@ validateTxBatch(txs: TransactionData[], marketData: MarketCondition): boolean[] 
   const isValid = prm.probability >= this.resonanceThreshold;
   return new Array(txs.length).fill(isValid);
 }
+import { PTEEnhanced } from '@rangisnet/pte-engine';
+
+// Single call gets everything
+const analysis = PTEEnhanced.getFullAnalysis(marketData);
+
+// Use the results
+console.log(analysis.sensory.recommendation);  // 'SEND' | 'WAIT' | 'REJECT'
+navigator.vibrate(analysis.haptic);            // Haptic feedback
+playAudio(analysis.audio);                     // Harmonic tone
+
