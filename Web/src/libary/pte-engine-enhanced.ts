@@ -18,3 +18,30 @@ computePRMBatch(dataArray: MarketCondition[]): PRMResult[] {
   }
   return results;
 }
+import { PTEEnhanced } from './pte-engine-enhanced';
+import { MarketCondition } from './types';
+
+// 1. Get market data
+const marketData: MarketCondition = { rsi: 70, vix: 20, sentiment: 0.8, volume_delta: 1.2 };
+
+// 2. Get full analysis
+const analysis = PTEEnhanced.getFullAnalysis(marketData);
+
+// 3. Use the results to provide feedback
+console.log(analysis.sensory.description);
+// -> "High confidence (99.9%). Strong market resonance..."
+
+// Play audio
+const audioContext = new AudioContext();
+const oscillator = audioContext.createOscillator();
+oscillator.type = analysis.audio.waveform;
+oscillator.frequency.setValueAtTime(analysis.audio.frequency, audioContext.currentTime);
+// ...
+
+// Trigger haptics
+navigator.vibrate(analysis.haptic);
+
+// 4. Make decision based on recommendation
+if (analysis.sensory.recommendation === 'SEND') {
+  // submitTransaction();
+}
