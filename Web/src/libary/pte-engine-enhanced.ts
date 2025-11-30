@@ -10,3 +10,11 @@ getFullAnalysis(marketData: MarketCondition): FullAnalysis {
 
   return { prm, sensory, audio, haptic, timestamp: Date.now() };
 }
+// src/pte-engine-enhanced.ts
+computePRMBatch(dataArray: MarketCondition[]): PRMResult[] {
+  const results = new Array(dataArray.length);
+  for (let i = 0; i < dataArray.length; i++) {
+    results[i] = this.computePRM(dataArray[i]);
+  }
+  return results;
+}
