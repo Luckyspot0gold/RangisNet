@@ -1,0 +1,7 @@
+P = σ(ω)
+
+where:
+  ω = tensorFusion + sentimentDelta
+  tensorFusion = 2 × RSI × VIX
+  sentimentDelta = sentiment × volume_delta
+  σ(x) = 1 / (1 + exp(-x / 5000))
