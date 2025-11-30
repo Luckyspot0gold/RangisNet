@@ -25,3 +25,9 @@
     "harmonic:deploy": "npm run validate:env && hardhat run scripts/deploy.ts --network avalanche"
   }
 }
+"scripts": {
+  "test": "jest --coverage",
+  "lint": "eslint src/ --ext .ts,.tsx",
+  "build": "tsc",
+  "deploy": "bash scripts/deploy-prod.sh"
+}
