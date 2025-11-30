@@ -55,5 +55,13 @@
       "resources": ["shared/*"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://thirdweb.com/*",
+      "*://*.thirdweb.com/*",
+      "*://kite.ai/*",
+      "*://*.kite.ai/*"
+    ]
+  }
 }

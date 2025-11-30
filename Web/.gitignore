@@ -1,1 +1,34 @@
+# Dependencies
 node_modules/
+
+# Test coverage
+coverage/
+
+# Environment variables (NEVER COMMIT!)
+.env
+
+# Hardhat
+cache/
+artifacts/
+
+# Deployment info (contains sensitive data)
+deployment-info.json
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
