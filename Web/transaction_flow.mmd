@@ -1,0 +1,35 @@
+graph TD
+    subgraph User Interaction
+        A[User Initiates Transaction] --> B{MetaMask Snap}
+        B --> C[PTE Pre-Validation]
+    end
+
+    subgraph PTE Analysis
+        C --> D{Market Data}
+        D --> E[RSI, VIX, Sentiment]
+        E --> F[computePRM()]
+        F --> G((PRM Result))
+        G --> H[Probability & Resonance Freq]
+    end
+
+    subgraph Sensory Feedback
+        H --> I{Sensory Mapper}
+        I --> J[Harmonic: 432-1432Hz]
+        I --> K[Haptic: Pulse, Wave, Buzz]
+        I --> L[Phonics: Audio Waveform]
+    end
+
+    subgraph Transaction Path
+        G --> M{Recommendation}
+        M -- SEND --> N[Avalanche x402 Subnet]
+        M -- WAIT --> O[User Decides]
+        M -- REJECT --> P[Transaction Aborted]
+        N --> Q[Transaction Success]
+        O --> A
+    end
+
+    style A fill:#cde4ff
+    style B fill:#ffcda8
+    style C fill:#fff2cd
+    style N fill:#d4edda
+    style P fill:#f8d7da
