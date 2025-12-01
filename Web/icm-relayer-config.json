@@ -1,0 +1,56 @@
+{
+  "log-level": "info",
+  "p-chain-api": {
+    "base-url": "https://api.avax-test.network",
+    "query-parameters": {},
+    "http-headers": {}
+  },
+  "info-api": {
+    "base-url": "https://api.avax-test.network",
+    "query-parameters": {},
+    "http-headers": {}
+  },
+  "source-blockchains": [
+    {
+      "subnet-id": "11111111111111111111111111111111LpoYY",
+      "blockchain-id": "yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://api.avax-test.network/ext/bc/C/rpc",
+        "query-parameters": {},
+        "http-headers": {}
+      },
+      "ws-endpoint": {
+        "base-url": "wss://api.avax-test.network/ext/bc/C/ws",
+        "query-parameters": {},
+        "http-headers": {}
+      },
+      "message-contracts": {
+        "REPLACE_WITH_RANGIS_SENSORY_MESSAGE_ADDRESS": {
+          "message-format": "off-chain-registry",
+          "settings": {
+            "teleporter-registry-address": "REPLACE_WITH_TELEPORTER_REGISTRY",
+            "reward-address": "REPLACE_WITH_REWARD_ADDRESS"
+          }
+        }
+      }
+    }
+  ],
+  "destination-blockchains": [
+    {
+      "subnet-id": "REPLACE_WITH_DFK_SUBNET_ID",
+      "blockchain-id": "REPLACE_WITH_DFK_BLOCKCHAIN_ID",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc",
+        "query-parameters": {},
+        "http-headers": {}
+      },
+      "account-private-key": "REPLACE_WITH_RELAYER_PRIVATE_KEY_HEX",
+      "kms-key-id": "",
+      "kms-aws-region": ""
+    }
+  ],
+  "process-missed-blocks": false,
+  "manual-warp-messages": []
+}
