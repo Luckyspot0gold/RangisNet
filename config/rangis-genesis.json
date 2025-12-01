@@ -1,0 +1,46 @@
+{
+  "network-name": "RangisNet",
+  "chain-config": {
+    "initial-allocations": [
+      {
+        "address": "REPLACE_WITH_YOUR_FUJI_WALLET",
+        "amount": "1000000000000000000"
+      }
+    ],
+    "token": {
+      "name": "RANGI",
+      "symbol": "RANGI",
+      "denomination": 18
+    }
+  },
+  "vm-genesis": {
+    "EVM": {
+      "chainID": 99999,
+      "alloc": {
+        "REPLACE_WITH_YOUR_WALLET_ADDRESS": {
+          "balance": "1000000000000000000000000"
+        }
+      },
+      "config": {
+        "homesteadBlock": 0,
+        "eip150Block": 0,
+        "eip155Block": 0,
+        "eip158Block": 0,
+        "byzantiumBlock": 0,
+        "constantinopleBlock": 0,
+        "petersburgBlock": 0,
+        "istanbulBlock": 0,
+        "muirGlacierBlock": 0,
+        "berlinBlock": 0,
+        "londonBlock": 0,
+        "gasLimit": 15000000
+      }
+    }
+  },
+  "consensus-params": {
+    "validators": [
+      "REPLACE_WITH_VALIDATOR_NODE_ID"
+    ],
+    "prng-seed": 12345
+  }
+}

@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  icm-relayer:
+    image: avaplatform/icm-services:latest
+    container_name: rangisnet-icm-relayer
+    command: relayer --config /config/icm-relayer-config-subnet.json
+    volumes:
+      - ./Web/icm-relayer-config-subnet.json:/config/icm-relayer-config-subnet.json:ro
+      - ./relayer-storage:/relayer-storage
+    environment:
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    networks:
+      - rangisnet
+
+  subnet-monitor:
+    image: node:20-alpine
+    container_name: rangisnet-subnet-monitor
+    working_dir: /app
+    command: node monitor.js
+    volumes:
+      - ./Web/src:/app
+    environment:
+      - SUBNET_RPC=https://subnets.avax.network/rangis/rpc
+      - MONITOR_INTERVAL=10000
+    restart: unless-stopped
+    networks:
+      - rangisnet
+
+networks:
+  rangisnet:
+    driver: bridge
+
+volumes:
+  relayer-storage:
