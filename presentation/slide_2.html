@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangisNet's Reality-First Strategy</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1221;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #0B1221;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px 30px;
+            box-sizing: border-box;
+        }
+
+        /* Background Texture */
+        .texture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #FFFFFF;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0 0 30px 0; /* reduced from 40px to 30px to save 10px height */
+            color: #3B82F6;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .comparison-container {
+            flex-grow: 1;
+            z-index: 1;
+            margin-bottom: 20px; /* reduced from 30px to 20px to save 10px height */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 20px;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px 20px;
+            border-bottom: 2px solid #3B82F6;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #3B82F6;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .feature-col {
+            width: 20%;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .competitor-col {
+            width: 40%;
+            color: #CCCCCC;
+            background: rgba(232, 65, 66, 0.05);
+        }
+
+        .rangisnet-col {
+            width: 40%;
+            color: #FFFFFF;
+            background: rgba(16, 185, 129, 0.05);
+            font-weight: 600;
+            border-left: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-icon {
+            margin-right: 10px;
+            width: 24px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .fa-times {
+            color: #E84142;
+        }
+
+        .fa-check {
+            color: #10B981;
+        }
+
+        .metrics-row {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 20px 30px;
+            border-radius: 0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .metric-item {
+            display: flex;
+            align-items: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .metric-icon {
+            color: #3B82F6;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .bottom-line {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #FFFFFF;
+            z-index: 1;
+            padding-top: 10px;
+        }
+
+        .highlight {
+            color: #10B981;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="texture-overlay"></div>
+        
+        <h1>RangisNet's Reality-First Strategy</h1>
+        <h2>Fully Functional Demo While Competitors Wait</h2>
+
+        <div class="comparison-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="feature-col">Feature</th>
+                        <th class="competitor-col">Competitors (Waiting)</th>
+                        <th class="rangisnet-col">RangisNet (Live Today)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-col">Sentiment</td>
+                        <td class="competitor-col"><span class="status-icon"><i class="fas fa-times"></i></span>Kite AI (unreleased)</td>
+                        <td class="rangisnet-col"><span class="status-icon"><i class="fas fa-check"></i></span>The TIE API (real-time)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Oracles</td>
+                        <td class="competitor-col"><span class="status-icon"><i class="fas fa-times"></i></span>Single source or mock</td>
+                        <td class="rangisnet-col"><span class="status-icon"><i class="fas fa-check"></i></span>Pyth + Chainlink (dual)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Cross-Chain</td>
+                        <td class="competitor-col"><span class="status-icon"><i class="fas fa-times"></i></span>ICM only</td>
+                        <td class="rangisnet-col"><span class="status-icon"><i class="fas fa-check"></i></span>ICM + Chainlink CCIP</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Haptics</td>
+                        <td class="competitor-col"><span class="status-icon"><i class="fas fa-times"></i></span>Waiting for Youmio SDK</td>
+                        <td class="rangisnet-col"><span class="status-icon"><i class="fas fa-check"></i></span>Web Vibration API (universal)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Payments</td>
+                        <td class="competitor-col"><span class="status-icon"><i class="fas fa-times"></i></span>Mock flows</td>
+                        <td class="rangisnet-col"><span class="status-icon"><i class="fas fa-check"></i></span>PayAI/0xGasless (live)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="metrics-row">
+            <div class="metric-item">
+                <i class="fas fa-shield-alt metric-icon"></i>
+                99.9% Reliability
+            </div>
+            <div class="metric-item">
+                <i class="fas fa-database metric-icon"></i>
+                Zero Mock Data
+            </div>
+            <div class="metric-item">
+                <i class="fas fa-bolt metric-icon"></i>
+                0.069μs Latency
+            </div>
+            <div class="metric-item">
+                <i class="fas fa-globe metric-icon"></i>
+                Universal Compatibility
+            </div>
+        </div>
+
+        <div class="bottom-line">
+            While competitors promise features, <span class="highlight">RangisNet delivers them.</span>
+        </div>
+    </div>
+</body>
+</html>
