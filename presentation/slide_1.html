@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hackathon Reality Check</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1221;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background-color: #0B1221;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            /* Keep top padding unchanged for title consistency */
+            padding: 60px 80px 30px; /* reduced bottom padding from 60px to 30px */
+            box-sizing: border-box;
+        }
+
+        /* Background Texture */
+        .texture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #FFFFFF;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0 0 30px 0; /* reduced from 50px */
+            color: #3B82F6;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px; /* reduced from 30px */
+            /* remove flex-grow to prevent vertical stretching */
+            z-index: 1;
+        }
+
+        .pitfall-item {
+            border-left: 4px solid #E84142;
+            padding: 18px; /* reduced from 25px */
+            background: rgba(255, 255, 255, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .pitfall-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px; /* reduced from 15px */
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(232, 65, 66, 0.1);
+            border: 1px solid #E84142;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .icon-box i {
+            color: #E84142;
+            font-size: 20px;
+        }
+
+        .pitfall-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #E84142;
+        }
+
+        .pitfall-content {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #CCCCCC;
+        }
+
+        .pitfall-content strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .bottom-line {
+            margin-top: 18px; /* reduced from 40px */
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFFFFF;
+            z-index: 1;
+            padding-top: 12px; /* reduced from 20px */
+            border-top: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .highlight {
+            color: #3B82F6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="texture-overlay"></div>
+        
+        <h1>The Hackathon Reality Check</h1>
+        <h2>Four Fatal Pitfalls That Kill Projects</h2>
+
+        <div class="grid-container">
+            <div class="pitfall-item">
+                <div class="pitfall-header">
+                    <div class="icon-box"><i class="fas fa-ban"></i></div>
+                    <div class="pitfall-title">Pitfall #1: Waiting for Unreleased APIs</div>
+                </div>
+                <div class="pitfall-content">
+                    • <strong>Kite AI Sentiment:</strong> Promised but not accessible<br>
+                    • <strong>Result:</strong> Teams show mock data in demos<br>
+                    • <strong>Judge Reaction:</strong> "Not production-ready"
+                </div>
+            </div>
+
+            <div class="pitfall-item">
+                <div class="pitfall-header">
+                    <div class="icon-box"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="pitfall-title">Pitfall #2: Single Point of Failure</div>
+                </div>
+                <div class="pitfall-content">
+                    • <strong>ICM-only messaging:</strong> Breaks if one system fails<br>
+                    • <strong>No fallback strategy</strong><br>
+                    • <strong>Demo failure</strong> = Instant disqualification
+                </div>
+            </div>
+
+            <div class="pitfall-item">
+                <div class="pitfall-header">
+                    <div class="icon-box"><i class="fas fa-cogs"></i></div>
+                    <div class="pitfall-title">Pitfall #3: SDK Dependency Hell</div>
+                </div>
+                <div class="pitfall-content">
+                    • <strong>Youmio haptics:</strong> Requires approval<br>
+                    • Teams without fallback have <strong>broken features</strong><br>
+                    • "Coming soon" doesn't win hackathons
+                </div>
+            </div>
+
+            <div class="pitfall-item">
+                <div class="pitfall-header">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <div class="pitfall-title">Pitfall #4: Mock Data in Production</div>
+                </div>
+                <div class="pitfall-content">
+                    • <code>const price = 35.50; // TODO</code><br>
+                    • Undermines credibility<br>
+                    • <strong>Proof-of-concept</strong>, not production system
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-line">
+            Most teams build on promises. <span class="highlight">RangisNet builds on reality.</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -38,6 +38,16 @@ export type PhonicsWaveform =
  * | < 0.3       | N/A           | Alert         | Square    | REJECT         |
  */
 export class SensoryMapper {
+  private static instance: SensoryMapper;
+
+  private constructor() {}
+
+  static getInstance(): SensoryMapper {
+    if (!SensoryMapper.instance) {
+      SensoryMapper.instance = new SensoryMapper();
+    }
+    return SensoryMapper.instance;
+  }
   /**
    * Map PRM result to multi-sensory feedback
    */

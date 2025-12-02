@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "title": "The Hackathon Reality Check",
+    "created": 1764582845.2299047,
+    "last_updated": 1764584427.002596,
+    "total_slides": 7
+  },
+  "slides": {
+    "slide_1": "edited",
+    "slide_2": "edited",
+    "slide_3": "edited",
+    "architecture_icm": "edited",
+    "interface_browsermcp": "edited",
+    "slide_4": "edited",
+    "slide_5": "edited"
+  },
+  "outline": [
+    {
+      "id": "slide_1",
+      "title": "The Hackathon Reality Check",
+      "summary": "Four fatal pitfalls that kill hackathon projects: waiting for APIs, single points of failure, SDK dependency hell, and mock data.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_2",
+      "title": "RangisNet's Reality-First Strategy",
+      "summary": "Comparison showing RangisNet's live features vs. competitors' waiting status across sentiment, oracles, cross-chain, haptics, and payments.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_3",
+      "title": "Scoring 100/100 - Reality's Advantage",
+      "summary": "Breakdown of how the reality-first strategy achieves a perfect score across all five judging criteria.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "architecture_icm",
+      "title": "Cross-Chain Architecture",
+      "summary": "Visualize the ICM cross-chain message flow from Avalanche C-Chain PTE analysis to DFK gaming subnet, showing the dual-messaging resilience and sensory data relay.",
+      "image_plan": "Use the uploaded RangisNetslide2.jpg image showing the ICM flow diagram with C-Chain, ICM Relayer Log, and DFK Subnet with JEWEL and haptic pulse.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "interface_browsermcp",
+      "title": "AI Agent Interface",
+      "summary": "Showcase the RangisNet BrowserMCP interface where Claude AI analyzes AVAX market data and triggers cross-chain actions, demonstrating the natural language control and multi-sensory feedback loop.",
+      "image_plan": "Use the uploaded RangiNetslide1.jpg image showing the BrowserMCP interface with Claude analyzing AVAX candlestick chart and the command to buy JEWEL tokens on DFK.",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_4",
+      "title": "Demo Day - The Moment of Truth",
+      "summary": "Three scenarios contrasting competitor failures with RangisNet successes when judges ask to see live features.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "slide_5",
+      "title": "Feel the Blockchain",
+      "summary": "Final pitch emphasizing multi-sensory feedback, key metrics, technology stack, and the vision for accessible DeFi.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

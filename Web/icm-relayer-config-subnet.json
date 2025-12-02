@@ -1,0 +1,88 @@
+{
+  "log-level": "info",
+  "p-chain-api": {
+    "base-url": "https://api.avax-test.network"
+  },
+  "info-api": {
+    "base-url": "https://api.avax-test.network"
+  },
+  "storage-location": "./relayer-storage",
+  "process-missed-blocks": false,
+  "manual-warp-messages": [],
+  "source-blockchains": [
+    {
+      "subnet-id": "REPLACE_WITH_RANGIS_SUBNET_ID",
+      "blockchain-id": "REPLACE_WITH_RANGIS_CHAIN_ID",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://subnets.avax.network/rangis/rpc"
+      },
+      "ws-endpoint": {
+        "base-url": "wss://subnets.avax.network/rangis/ws"
+      },
+      "message-contracts": {
+        "REPLACE_WITH_HARMONIC_CONSENSUS_ADDRESS": {
+          "message-format": "teleporter",
+          "settings": {
+            "rewards-address": "REPLACE_WITH_REWARDS_ADDRESS"
+          }
+        }
+      },
+      "supported-destinations": [
+        {
+          "blockchain-id": "REPLACE_WITH_DFK_CHAIN_ID",
+          "addresses": ["REPLACE_WITH_DFK_RECEIVER_ADDRESS"]
+        },
+        {
+          "blockchain-id": "yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp",
+          "addresses": ["REPLACE_WITH_C_CHAIN_RECEIVER_ADDRESS"]
+        }
+      }
+    },
+    {
+      "subnet-id": "11111111111111111111111111111111LpoYY",
+      "blockchain-id": "yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://api.avax-test.network/ext/bc/C/rpc"
+      },
+      "ws-endpoint": {
+        "base-url": "wss://api.avax-test.network/ext/bc/C/ws"
+      },
+      "message-contracts": {
+        "REPLACE_WITH_C_CHAIN_SENDER_ADDRESS": {
+          "message-format": "teleporter",
+          "settings": {
+            "rewards-address": "REPLACE_WITH_REWARDS_ADDRESS"
+          }
+        }
+      },
+      "supported-destinations": [
+        {
+          "blockchain-id": "REPLACE_WITH_RANGIS_CHAIN_ID",
+          "addresses": ["REPLACE_WITH_HARMONIC_CONSENSUS_ADDRESS"]
+        }
+      ]
+    }
+  ],
+  "destination-blockchains": [
+    {
+      "subnet-id": "REPLACE_WITH_RANGIS_SUBNET_ID",
+      "blockchain-id": "REPLACE_WITH_RANGIS_CHAIN_ID",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://subnets.avax.network/rangis/rpc"
+      },
+      "account-private-key": "REPLACE_WITH_RELAYER_PRIVATE_KEY"
+    },
+    {
+      "subnet-id": "11111111111111111111111111111111LpoYY",
+      "blockchain-id": "yH8D7ThNJkxmtkuv2jgBa4P1Rn3Qpr4pPr7QYNfcdoS6k6HWp",
+      "vm": "evm",
+      "rpc-endpoint": {
+        "base-url": "https://api.avax-test.network/ext/bc/C/rpc"
+      },
+      "account-private-key": "REPLACE_WITH_RELAYER_PRIVATE_KEY"
+    }
+  ]
+}
