@@ -161,3 +161,24 @@ contract RangisPayment {
         return balances[account];
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+
+contract RangisPayment {
+  IERC20 public usdc; // Fuji USDC
+  mapping(address => uint256) public balances;
+
+  event PaymentProcessed(address user, uint256 amount, bool valid);
+
+  constructor(address _usdc) { usdc = IERC20(_usdc); }
+
+  function processMicropayment(uint256 amount, bytes calldata prmData) external {
+    require(usdc.transferFrom(msg.sender, address(this), amount), "Payment failed");
+    (bool valid, uint256 omega) = abi.decode(prmData, (bool, uint256)); // PTE output
+    if (valid && omega > 432) {
+      balances[msg.sender] += amount; // Credit on resonance
+    }
+    emit PaymentProcessed(msg.sender, amount, valid);
+  }
+}
