@@ -1,6 +1,11 @@
 import { PRMResult } from './types';
 
 /**
+ * Web Audio API OscillatorType
+ */
+type OscillatorType = 'sine' | 'square' | 'sawtooth' | 'triangle';
+
+/**
  * Sensory Feedback Types
  */
 export interface SensoryFeedback {
@@ -197,4 +202,4 @@ export interface AudioSettings {
 }
 
 // Export singleton instance
-export const Mapper = new SensoryMapper();
+export const Mapper = SensoryMapper.getInstance();
