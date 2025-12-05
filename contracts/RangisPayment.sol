@@ -12,11 +12,11 @@ contract RangisPayment {
 
   function processMicropayment(uint256 amount, bytes calldata prmData) external {
     require(usdc.transferFrom(msg.sender, address(this), amount), "Payment failed");
-    // Decode prmData (from PTE) for validation
+    // Decode prmData (from PTE) for validation with error handling
+    require(prmData.length > 0, "Invalid PRM data: empty");
     (bool valid) = abi.decode(prmData, (bool));
-    if (valid) {
-      balances[msg.sender] += amount; // Credit for premium access
-    }
+    require(valid, "Invalid PRM data: validation failed");
+    balances[msg.sender] += amount; // Credit for premium access
     emit PaymentProcessed(msg.sender, amount, valid);
   }
 }

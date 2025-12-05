@@ -5,7 +5,7 @@
 ### Build and Run Locally
 
 ```bash
-# From repository root
+# From repository root (important: build context is repo root, not docker/)
 docker build -t rangisnet -f docker/Dockerfile .
 docker run -p 8000:8000 rangisnet
 ```

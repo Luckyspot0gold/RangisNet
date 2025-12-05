@@ -8,13 +8,13 @@ RUN apk add --no-cache python3 py3-pip
 
 WORKDIR /app
 
-# Copy package files
-COPY ../Web/package*.json ./
+# Copy package files (build context is repo root)
+COPY Web/package*.json ./
 RUN npm install
 
 # Copy source code
-COPY ../Web/src ./src
-COPY ../Web/tsconfig.json ./
+COPY Web/src ./src
+COPY Web/tsconfig.json ./
 
 # Build TypeScript
 RUN npm run build || echo "No build script, skipping"
