@@ -1,43 +1,37 @@
 import { MarketCondition, PRMResult, TransactionData, TransactionRecommendation, RecommendationAction } from './types';
 
 export class ProbabilityTensorEngine {
-  private resonanceThreshold = 0.3; // PRM cutoff from McCrea equation
+  private resonanceThreshold = 0.3; // PRM cutoff
   private readonly MIN_FREQUENCY = 432; // Base harmonic frequency (Hz)
   private readonly MAX_FREQUENCY = 1432; // Maximum frequency range
 
   /**
-   * Compute Probability Resonance Metric (PRM) using McCrea Equation
-   * P = σ(ω) where ω = tensorFusion + sentimentDelta
-   * tensorFusion = sum(RSI ⊗ VIX)
-   * sentimentDelta = sentiment * volume_delta
+   * Compute Probability Resonance Metric (PRM)
    */
   computePRM(data: MarketCondition): PRMResult {
-    // Validate input data
     this.validateMarketCondition(data);
 
-    // Create 2x2 diagonal tensors for quantum simulation
-    // RSI tensor: [[RSI, 0], [0, RSI]]
-    // VIX tensor: [[VIX, 0], [0, VIX]]
-    // Tensor product (element-wise multiplication for diagonal matrices):
-    // [[RSI*VIX, 0], [0, RSI*VIX]]
+    // Simplified fusion logic:
+    // tensorElement = RSI * VIX (diagonal 2x2 tensor with same value)
     const tensorElement = data.rsi * data.vix;
-    const tensorFusion = tensorElement * 2; // Sum of diagonal elements
-    
+    // Sum of diagonal elements of 2x2 matrix [[t,0],[0,t]] = 2*t
+    const tensorFusion = tensorElement * 2;
+
     // Sentiment-weighted volume delta
     const sentimentDelta = data.sentiment * data.volume_delta;
-    
-    // Resonance frequency (omega)
+
+    // Resonance (omega)
     const omega = tensorFusion + sentimentDelta;
-    
-    // Sigmoid activation for probability (0-1)
-    const rawProbability = 1 / (1 + Math.exp(-omega / 5000)); // Scaled sigmoid
-    
+
+    // Sigmoid activation for probability (scaled for stability)
+    const rawProbability = 1 / (1 + Math.exp(-omega / 5000));
+
     // Apply threshold filter
     const probability = rawProbability > this.resonanceThreshold ? rawProbability : 0;
-    
+
     // Map to audible/haptic frequency range
     const resonanceFreq = this.mapToFrequencyRange(omega);
-    
+
     return {
       probability,
       resonanceFreq,
@@ -48,12 +42,31 @@ export class ProbabilityTensorEngine {
   }
 
   /**
-   * Validate transaction based on market conditions
-   * Returns true if PRM probability meets threshold
+   * Batch PRM compute
    */
-  validateTx(txData: TransactionData, marketData: MarketCondition): boolean {
+  computePRMBatch(dataArray: MarketCondition[]): PRMResult[] {
+    const results: PRMResult[] = new Array(dataArray.length);
+    for (let i = 0; i < dataArray.length; i++) {
+      results[i] = this.computePRM(dataArray[i]);
+    }
+    return results;
+  }
+
+  /**
+   * Validate transaction based on market conditions
+   */
+  validateTx(_txData: TransactionData, marketData: MarketCondition): boolean {
     const prm = this.computePRM(marketData);
     return prm.probability >= this.resonanceThreshold;
+  }
+
+  /**
+   * Batch validation for multiple transactions with same market conditions
+   */
+  validateTxBatch(txs: TransactionData[], marketData: MarketCondition): boolean[] {
+    const prm = this.computePRM(marketData);
+    const isValid = prm.probability >= this.resonanceThreshold;
+    return new Array(txs.length).fill(isValid);
   }
 
   /**
@@ -61,10 +74,10 @@ export class ProbabilityTensorEngine {
    */
   getRecommendation(marketData: MarketCondition): TransactionRecommendation {
     const prm = this.computePRM(marketData);
-    
+
     let action: RecommendationAction;
     let reason: string;
-    
+
     if (prm.probability >= 0.7) {
       action = 'SEND';
       reason = `High confidence (${(prm.probability * 100).toFixed(1)}%). Market conditions favorable with strong resonance at ${prm.resonanceFreq.toFixed(0)}Hz.`;
@@ -75,7 +88,7 @@ export class ProbabilityTensorEngine {
       action = 'REJECT';
       reason = `Low confidence (${(prm.probability * 100).toFixed(1)}%). Market conditions unfavorable - high risk of transaction failure.`;
     }
-    
+
     return {
       action,
       reason,
@@ -85,7 +98,7 @@ export class ProbabilityTensorEngine {
   }
 
   /**
-   * Set custom resonance threshold
+   * Set/Get threshold
    */
   setThreshold(threshold: number): void {
     if (threshold < 0 || threshold > 1) {
@@ -94,9 +107,6 @@ export class ProbabilityTensorEngine {
     this.resonanceThreshold = threshold;
   }
 
-  /**
-   * Get current threshold
-   */
   getThreshold(): number {
     return this.resonanceThreshold;
   }
@@ -106,8 +116,10 @@ export class ProbabilityTensorEngine {
    */
   private mapToFrequencyRange(omega: number): number {
     const absOmega = Math.abs(omega);
-    const normalized = absOmega % 1000;
-    return normalized + this.MIN_FREQUENCY;
+    const span = this.MAX_FREQUENCY - this.MIN_FREQUENCY;
+    // Normalize and clamp into range
+    const normalized = (absOmega % span);
+    return this.MIN_FREQUENCY + normalized;
   }
 
   /**
@@ -129,5 +141,5 @@ export class ProbabilityTensorEngine {
   }
 }
 
-// Export singleton instance for use in HTF
+// Export singleton instance for backward-compatibility
 export const PTE = new ProbabilityTensorEngine();
