@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import HamiltonianSphere from "@/components/HamiltonianSphere";
-import { HarmonicAudio } from "@/components/HarmonicAudio";
+import { HarmonicAudio } from "@/components/harmonicaudio";
 import MintCapsuleButton from "@/components/MintCapsuleButton";
 
 export default function Page(){

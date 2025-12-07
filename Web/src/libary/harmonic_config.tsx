@@ -1,7 +1,10 @@
 "use client";
 import * as THREE from "three"; import { useEffect, useRef } from "react";
+import { ConfigValidationError } from './chain';
+
 const K = [1,0.75,0.5,0,-0.5,-0.75,-1];
 const PHI = Array.from({length:24},(_,i)=>i*Math.PI/12);
+const ETH_ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
 export default function HamiltonianSphere({r=1}:{r?:number}) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(()=>{ 

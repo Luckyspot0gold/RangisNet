@@ -1,5 +1,3 @@
-export const RPC = process.env.NEXT_PUBLIC_RPC!;
-export const CONTRACT = process.env.NEXT_PUBLIC_CONTRACT as `0x${string}`;
 // lib/config.ts
 export class ConfigValidationError extends Error {
   constructor(message: string) {
@@ -37,5 +35,6 @@ export const validateContractAddress = (address: string): `0x${string}` => {
 };
 
 // Validated exports
-export const RPC = validateRPC(process.env.NEXT_PUBLIC_RPC!);
-export const CONTRACT = validateContractAddress(process.env.NEXT_PUBLIC_CONTRACT!);
+export const RPC = validateRPC(process.env.NEXT_PUBLIC_RPC || 'https://api.avax-test.network/ext/bc/C/rpc');
+export const CONTRACT = validateContractAddress(process.env.NEXT_PUBLIC_CONTRACT || '0x5FbDB2315678afecb367f032d93F642f64180aa3');
+

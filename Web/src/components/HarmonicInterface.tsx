@@ -1,25 +1,19 @@
 // components/HarmonicInterface.tsx
 'use client';
 
-import { useHarmonicContract } from '../hooks/useHarmonicContract';
-
 export default function HarmonicInterface() {
-  const { config, contract } = useHarmonicContract();
-  
-  const { data: resonance } = useContractRead({
-    ...contract,
-    functionName: 'getResonance',
-    args: ['0x...'] // asset address
-  });
+  const network = process.env.NEXT_PUBLIC_NETWORK || 'fuji';
+  const contract = process.env.NEXT_PUBLIC_CONTRACT || '0x5FbDB2315678afecb367f032d93F642f64180aa3';
 
   return (
-    <div className="harmonic-interface">
-      <h2>RangiNet Harmonic Interface</h2>
-      <p>Network: {config.network}</p>
-      <p>Contract: {config.contract}</p>
-      <p>Current Resonance: {resonance?.toString()}</p>
+    <div className="harmonic-interface" style={{padding: '20px', border: '1px solid #00d4ff40', borderRadius: '8px'}}>
+      <h2 style={{marginBottom: '16px'}}>RangisNet Harmonic Interface</h2>
+      <p>Network: {network}</p>
+      <p>Contract: {contract}</p>
+      <p>Teleporter: 0x253b2784c75e510dD0fF1da844684a1aC0aa5fcf</p>
       
       {/* Your harmonic visualization components */}
     </div>
   );
 }
+
