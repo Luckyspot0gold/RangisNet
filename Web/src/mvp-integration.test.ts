@@ -11,7 +11,8 @@
 import { describe, it, expect, beforeAll } from '@jest/globals';
 import { PTEEngineMVP } from './pte-engine-mvp';
 import { getSentimentAPI } from './integrations/the-tie-sentiment';
-import { getPythClient } from './integrations/pyth-oracle';
+// import { getPythClient } from './integrations/pyth-oracle';
+import { getOracleSuite } from './integrations/oracle-suite';
 import { getMonetizationLayer } from './integrations/x402-monetization';
 
 describe('MVP Integration Tests', () => {

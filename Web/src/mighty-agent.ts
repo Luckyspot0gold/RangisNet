@@ -133,7 +133,7 @@ class MightyAgent {
     }
 
     // Import x402 payment function dynamically to avoid circular deps
-    const { oneTapConnectAndSettle } = await import("./x402ThirdwebConnect");
+    const { oneTapConnectAndSettle } = await import("@/lib/x402ThirdwebConnect");
 
     try {
       // Execute trade via x402 paid service

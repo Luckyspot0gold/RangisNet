@@ -7,11 +7,10 @@
  */
 
 import { ethers } from 'ethers';
+import { MarketCondition as BaseMarketCondition, PRMResult as BasePRMResult } from './types';
 
-export interface MarketCondition {
-  rsi: number;
-  vix: number;
-  sentiment?: number;
+// Extended MarketCondition with subnet-specific fields
+export interface SubnetMarketCondition extends BaseMarketCondition {
   gasPrice?: bigint;
 }
 
@@ -28,7 +27,7 @@ export interface PTEResult {
 
 export class PTEEngineSubnet {
   private static instance: PTEEngineSubnet;
-  private provider: ethers.JsonRpcProvider | null = null;
+  private provider: ethers.providers.JsonRpcProvider | null = null;
   private subnetRPC: string;
   
   private constructor() {
@@ -46,7 +45,7 @@ export class PTEEngineSubnet {
 
   private initializeProvider(): void {
     try {
-      this.provider = new ethers.JsonRpcProvider(this.subnetRPC);
+      this.provider = new ethers.providers.JsonRpcProvider(this.subnetRPC);
     } catch (error) {
       console.warn('Failed to initialize subnet provider:', error);
       this.provider = null;
@@ -63,7 +62,9 @@ export class PTEEngineSubnet {
 
     try {
       const feeData = await this.provider.getFeeData();
-      return feeData.gasPrice || BigInt(0);
+      // ethers v5 returns BigNumber, convert to bigint
+      const gasPrice = feeData.gasPrice;
+      return gasPrice ? BigInt(gasPrice.toString()) : BigInt(0);
     } catch (error) {
       console.warn('Failed to fetch subnet gas data:', error);
       return BigInt(0);
@@ -74,7 +75,7 @@ export class PTEEngineSubnet {
    * Compute PRM (Probability of Resonant Market) using McCrea Equation
    * Enhanced with subnet gas data
    */
-  public async computePRM(data: MarketCondition): Promise<number> {
+  public async computePRM(data: SubnetMarketCondition): Promise<number> {
     // Fetch real-time gas price from subnet
     const gasPrice = await this.fetchSubnetGasData();
     const gasPriceNumber = Number(gasPrice) / 1e9; // Convert to Gwei
@@ -137,7 +138,7 @@ export class PTEEngineSubnet {
    * Validate transaction against Harmonic Transaction Filtering (HTF)
    * This is the pre-validation that happens at the subnet mempool level
    */
-  public async validateTxHTF(data: MarketCondition): Promise<boolean> {
+  public async validateTxHTF(data: SubnetMarketCondition): Promise<boolean> {
     const probability = await this.computePRM(data);
     
     // HTF threshold: Only allow transactions with probability >= 0.3
@@ -148,7 +149,7 @@ export class PTEEngineSubnet {
   /**
    * Complete PTE analysis with sensory mapping
    */
-  public async analyze(data: MarketCondition): Promise<PTEResult> {
+  public async analyze(data: SubnetMarketCondition): Promise<PTEResult> {
     const probability = await this.computePRM(data);
     const frequency = this.mapToFrequency(probability);
     const haptic = this.mapToHaptic(probability);

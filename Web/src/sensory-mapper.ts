@@ -40,8 +40,10 @@ export type PhonicsWaveform =
 export class SensoryMapper {
   private static instance: SensoryMapper;
 
+  // Private constructor for singleton pattern
   private constructor() {}
 
+  // Get singleton instance
   static getInstance(): SensoryMapper {
     if (!SensoryMapper.instance) {
       SensoryMapper.instance = new SensoryMapper();
@@ -169,4 +171,4 @@ export interface AudioSettings {
 }
 
 // Export singleton instance
-export const Mapper = new SensoryMapper();
+export const Mapper = SensoryMapper.getInstance();

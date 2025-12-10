@@ -1,0 +1,55 @@
+# Node modules
+**/node_modules
+**/npm-debug.log
+
+# Next.js
+**/.next
+**/out
+
+# Build files
+**/dist
+**/build
+
+# Testing
+**/.nyc_output
+**/coverage
+
+# IDE
+**/.vscode
+**/.idea
+**/*.swp
+**/*.swo
+*~
+
+# OS
+**/.DS_Store
+**/Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Cache
+**/.cache
+**/.parcel-cache
+**/.turbo
+
+# Vercel
+**/.vercel
+
+# Env files (keep only .env.example)
+**/.env.local
+**/.env.*.local
+
+# Logs
+**/logs
+**/*.log
+
+# Documentation (optional, comment out if needed)
+*.md
+!README.md
+
+# Large data files
+**/*.csv
+**/*.json.gz
+**/*.db

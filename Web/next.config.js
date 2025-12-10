@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // Optimize for Vercel deployment
+  // Optimize for Cloud Run & Vercel deployment
   output: 'standalone',
   
   // Enable experimental features

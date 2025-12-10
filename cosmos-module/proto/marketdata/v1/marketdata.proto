@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package rangisnet.marketdata.v1;
+
+option go_package = "github.com/Luckyspot0gold/RangisNet/x/marketdata/types";
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/timestamp.proto";
+
+// MarketDataPoint represents a single market data entry
+message MarketDataPoint {
+  option (gogoproto.equal) = true;
+  
+  string symbol = 1;
+  string price = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string volume_24h = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string price_change_24h = 4 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  google.protobuf.Timestamp timestamp = 5 [
+    (gogoproto.nullable) = false,
+    (gogoproto.stdtime) = true
+  ];
+  repeated string sources = 6;
+  string confidence = 7 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+// PRMAnalysis represents the Probabilistic Resonance Model analysis result
+message PRMAnalysis {
+  option (gogoproto.equal) = true;
+  
+  string symbol = 1;
+  string recommendation = 2; // SEND, WAIT, or STOP
+  string confidence = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  HarmonicOutput harmonic = 4 [(gogoproto.nullable) = false];
+  HapticOutput haptic = 5 [(gogoproto.nullable) = false];
+  PhonicOutput phonic = 6 [(gogoproto.nullable) = false];
+  string resonance_score = 7 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  google.protobuf.Timestamp timestamp = 8 [
+    (gogoproto.nullable) = false,
+    (gogoproto.stdtime) = true
+  ];
+}
+
+// HarmonicOutput represents harmonic resonance output
+message HarmonicOutput {
+  string frequency = 1 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string amplitude = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string waveform = 3;
+  int64 duration_ms = 4;
+}
+
+// HapticOutput represents haptic feedback output
+message HapticOutput {
+  string intensity = 1 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  repeated int64 pattern = 2;
+  int64 duration_ms = 3;
+}
+
+// PhonicOutput represents audio output
+message PhonicOutput {
+  string pitch = 1 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string volume = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string timbre = 3;
+  int64 duration_ms = 4;
+}

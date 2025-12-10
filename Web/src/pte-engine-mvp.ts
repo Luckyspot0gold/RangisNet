@@ -13,7 +13,8 @@
  */
 
 import { getSentimentAPI, SentimentData } from './integrations/the-tie-sentiment';
-import { getPythClient, MarketIndicators } from './integrations/pyth-oracle';
+// import { getPythClient, MarketIndicators } from './integrations/pyth-oracle';
+import { getOracleSuite, MarketData as MarketIndicators } from './integrations/oracle-suite';
 import { getMonetizationLayer, PaymentResponse } from './integrations/x402-monetization';
 import { SensoryMapper } from './sensory-mapper';
 
@@ -43,9 +44,9 @@ export interface PTEResult {
 export class PTEEngineMVP {
   private static instance: PTEEngineMVP;
   private sentimentAPI = getSentimentAPI(true); // Use mock for now
-  private pythClient = getPythClient('devnet');
+  private pythClient = getOracleSuite(); // Use oracle suite instead of getPythClient
   private monetization = getMonetizationLayer(process.env.RECIPIENT_ADDRESS || '0x...');
-  private sensoryMapper = SensoryMapper.getInstance();
+  private sensoryMapper = SensoryMapper.getInstance(); // Use singleton
   
   private sendThreshold = 0.7;
   private rejectThreshold = 0.3;
@@ -78,13 +79,13 @@ export class PTEEngineMVP {
       let marketData: EnhancedMarketData;
 
       if (options.usePyth) {
-        // Use Pyth Network for real-time data
-        const indicators = await this.pythClient.fetchMarketIndicators(asset);
+        // Use Oracle Suite for real-time data
+        const indicators = await this.pythClient.getMarketData(asset);
         marketData = {
           rsi: indicators.rsi,
           vix: indicators.vix,
           price: indicators.price,
-          volume24h: indicators.volume24h,
+          volume24h: 0, // indicators.volume24h not available in MarketData
           timestamp: indicators.timestamp
         };
       } else {
@@ -118,10 +119,9 @@ export class PTEEngineMVP {
       // Get recommendation
       const recommendation = this.getRecommendation(enhancedPRM);
 
-      // Map to sensory feedback
-      const frequency = this.sensoryMapper.mapPRMToFrequency(enhancedPRM);
-      const haptic = this.sensoryMapper.mapPRMToHaptic(enhancedPRM);
-      const phonic = this.sensoryMapper.mapPRMToPhonic(enhancedPRM);
+      // Map to sensory feedback using SensoryMapper singleton
+      const prmResult = { probability: enhancedPRM, resonanceFreq: 432 + enhancedPRM * 100, hvi: marketData.vix, hli: 0.8, timestamp: Date.now() };
+      const sensoryFeedback = this.sensoryMapper.mapSensory(prmResult);
 
       // Calculate confidence
       const confidence = this.calculateConfidence(marketData, sentimentBoost);
@@ -134,11 +134,11 @@ export class PTEEngineMVP {
       return {
         prm: enhancedPRM,
         recommendation,
-        frequency,
+        frequency: sensoryFeedback.harmonic || 432,
         sensory: {
-          harmonic: frequency,
-          haptic,
-          phonic
+          harmonic: sensoryFeedback.harmonic || 432,
+          haptic: sensoryFeedback.haptic,
+          phonic: sensoryFeedback.phonic
         },
         confidence,
         sentimentBoost: options.useSentiment ? sentimentBoost : undefined,

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package rangisnet.marketdata.v1;
+
+option go_package = "github.com/Luckyspot0gold/RangisNet/x/marketdata/types";
+
+import "marketdata/v1/marketdata.proto";
+import "gogoproto/gogo.proto";
+
+// Msg defines the marketdata Msg service
+service Msg {
+  // SubmitMarketData submits new market data to the chain
+  rpc SubmitMarketData(MsgSubmitMarketData) returns (MsgSubmitMarketDataResponse);
+  
+  // SubmitPRMAnalysis submits PRM analysis result to the chain
+  rpc SubmitPRMAnalysis(MsgSubmitPRMAnalysis) returns (MsgSubmitPRMAnalysisResponse);
+}
+
+// MsgSubmitMarketData is the message for submitting market data
+message MsgSubmitMarketData {
+  option (gogoproto.equal) = true;
+  
+  string oracle = 1;
+  MarketDataPoint market_data = 2 [(gogoproto.nullable) = false];
+}
+
+// MsgSubmitMarketDataResponse is the response for SubmitMarketData
+message MsgSubmitMarketDataResponse {
+  bool success = 1;
+}
+
+// MsgSubmitPRMAnalysis is the message for submitting PRM analysis
+message MsgSubmitPRMAnalysis {
+  option (gogoproto.equal) = true;
+  
+  string oracle = 1;
+  PRMAnalysis analysis = 2 [(gogoproto.nullable) = false];
+}
+
+// MsgSubmitPRMAnalysisResponse is the response for SubmitPRMAnalysis
+message MsgSubmitPRMAnalysisResponse {
+  bool success = 1;
+}

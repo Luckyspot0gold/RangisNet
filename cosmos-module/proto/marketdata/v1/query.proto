@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package rangisnet.marketdata.v1;
+
+option go_package = "github.com/Luckyspot0gold/RangisNet/x/marketdata/types";
+
+import "marketdata/v1/marketdata.proto";
+import "gogoproto/gogo.proto";
+
+// Query defines the gRPC query service for the marketdata module
+service Query {
+  // GetMarketData queries market data for a specific symbol
+  rpc GetMarketData(QueryGetMarketDataRequest) returns (QueryGetMarketDataResponse) {}
+  
+  // GetPRMAnalysis queries PRM analysis for a specific symbol
+  rpc GetPRMAnalysis(QueryGetPRMAnalysisRequest) returns (QueryGetPRMAnalysisResponse) {}
+  
+  // ListMarketData queries all available market data
+  rpc ListMarketData(QueryListMarketDataRequest) returns (QueryListMarketDataResponse) {}
+}
+
+// QueryGetMarketDataRequest is the request type for the GetMarketData RPC method
+message QueryGetMarketDataRequest {
+  string symbol = 1;
+}
+
+// QueryGetMarketDataResponse is the response type for the GetMarketData RPC method
+message QueryGetMarketDataResponse {
+  MarketDataPoint market_data = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryGetPRMAnalysisRequest is the request type for the GetPRMAnalysis RPC method
+message QueryGetPRMAnalysisRequest {
+  string symbol = 1;
+}
+
+// QueryGetPRMAnalysisResponse is the response type for the GetPRMAnalysis RPC method
+message QueryGetPRMAnalysisResponse {
+  PRMAnalysis analysis = 1 [(gogoproto.nullable) = false];
+}
+
+// QueryListMarketDataRequest is the request type for the ListMarketData RPC method
+message QueryListMarketDataRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+}
+
+// QueryListMarketDataResponse is the response type for the ListMarketData RPC method
+message QueryListMarketDataResponse {
+  repeated MarketDataPoint market_data = 1 [(gogoproto.nullable) = false];
+  int64 total = 2;
+}

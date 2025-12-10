@@ -1,0 +1,10 @@
+services:
+  rangisnet:
+    image: rangisnet
+    build:
+      context: Web/.next
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000

@@ -244,27 +244,136 @@ This launches a basic visualization and audio synthesizer connected to RangisNet
 
 ---
 
-🔒 Intellectual Property Notice
+## 🔒 Intellectual Property & Legal Protection
 
-RangisNet contains proprietary, patent-pending technologies owned by:
+### Proprietary Technologies
 
-Reality Protocol LLC – Justin McCrea
+RangisNet contains **proprietary, patent-pending technologies** owned by:
 
-Harmonic Execution Layer™
+**Reality Protocol LLC** — Justin McCrea, Founder
 
-McCrea Market Metrics™
+#### Protected Trademarks
 
-McCrea Quantum Modular System™
+- **Rangi's Net™** — Multi-sensory blockchain cognition platform
+- **McCrea Metrics™** — Predictive probability tensor engine
+- **Sensory Cognition Engine™** — Multi-modal data translation system
+- **Harmonic Execution Layer™** — 432 Hz baseline harmonic system
+- **Seven Bells Architecture™** — Seven-layer sensory processing framework
+- **Mighty Agent™** — Autonomous agentic decision system
+- **Sonic Event Codes™** — Structured sensory event protocol
 
-Sonic Event Codes™
+#### Trade Secrets (Confidential)
 
-Harmonic Envelope Format™
+The following components are **trade secrets** and **not open source**:
 
-Consensus Harmonics™
+✅ **McCrea Metrics Engine** — Core mathematical transforms (A(t), H(t), ω(t), P(t))  
+✅ **Harmonic Transformation Formulas** — 432 Hz baseline modulation algorithms  
+✅ **Haptic Mapping Library** — Vibration pattern generation logic  
+✅ **Cymatic Geometry Engine** — Deterministic visual generation from economic signals  
+✅ **Sensory Payload Encoding** — Cross-chain transmission protocol  
+✅ **Probability Tensor Computation** — Proprietary sigmoid with temperature constant τ  
+✅ **Agentic Negotiation Logic** — AI decision framework using sensory inputs
 
+#### Patent Status
 
-See IP-NOTICE.md and LICENSE for rights and usage.
+**US Provisional Patent:** Target filing Q1 2026
 
+**Claims:**
+
+1. Systems and methods for multi-sensory cognitive translation of economic signal data
+2. Harmonic transformation of financial data using 432 Hz baseline
+3. Haptic cognition system for market interpretation
+4. Cymatic visualization engine for deterministic geometry generation
+5. Multi-sensory synchronization protocol
+6. Cross-chain sensory payload transmission (ICM, x402, Wormhole)
+7. Agentic decision framework using sensory inputs
+
+**Patent Packet:** See [PATENT_FILING_PACKET.md](./PATENT_FILING_PACKET.md)
+
+#### Copyright Protection
+
+All source code, documentation, and visual assets are:
+
+**© 2025 Reality Protocol LLC. All Rights Reserved.**
+
+Protected under:
+
+- **US Copyright Law** (automatic protection)
+- **Berne Convention** (international protection)
+- **DMCA** (Digital Millennium Copyright Act)
+
+#### Licensing
+
+This project uses a **dual-license model**:
+
+##### Non-Commercial Use (Proprietary License)
+
+Testing, evaluation, and non-commercial integration:
+
+- See [PROPRIETARY_LICENSE_AGREEMENT.md](./PROPRIETARY_LICENSE_AGREEMENT.md)
+- **No reverse engineering**
+- **No derivative sensory engines**
+- **No AI training** without permission
+
+##### Commercial Use (Paid License)
+
+API access, production integration, revenue-generating applications:
+
+- See [COMMERCIAL_LICENSE_AGREEMENT.md](./COMMERCIAL_LICENSE_AGREEMENT.md)
+- Tiered pricing (Developer, Startup, Enterprise)
+- Custom terms for strategic partners
+- Contact: **legal@rangis.net**
+
+##### Open Source Components
+
+The following dependencies are used under their respective open-source licenses:
+
+- **React** (MIT) — facebook/react
+- **Next.js** (MIT) — vercel/next.js
+- **Three.js** (MIT) — mrdoob/three.js
+- **Thirdweb SDK** (Apache 2.0) — thirdweb-dev/js
+- **Avalanche SDK** (BSD-3-Clause) — ava-labs/avalanchejs
+
+**We comply with all license terms and provide proper attribution.**
+
+#### Security & Confidentiality
+
+**Reporting Vulnerabilities:**
+
+See [SECURITY.md](./SECURITY.md) for our responsible disclosure policy.
+
+**Email:** security@rangis.net  
+**GitHub Security:** [Report privately](https://github.com/Luckyspot0gold/RangisNet/security/advisories)
+
+**Confidential Information:**
+
+Access to proprietary components requires:
+
+- ✅ Non-Disclosure Agreement (NDA)
+- ✅ IP Assignment Agreement (for contractors)
+- ✅ Approved collaborator status
+
+#### Enforcement
+
+We actively monitor and enforce our IP rights:
+
+- **USPTO Watch Service** — Trademark monitoring
+- **GitHub DMCA** — Copyright enforcement
+- **Patent Prosecution** — Ongoing patent applications
+- **Trade Secret Protection** — Code obfuscation, access control
+
+**Infringement Reports:** legal@rangis.net
+
+#### Full Documentation
+
+For complete IP details, see:
+
+- 📘 [Master System Document](./RANGISNET_MASTER_DOCUMENT.md) — Complete technical specification
+- 📘 [Patent Filing Packet](./PATENT_FILING_PACKET.md) — Patent claims and diagrams
+- 📘 [Trademark Strategy](./TRADEMARK_STRATEGY.md) — Brand protection plan
+- 📘 [IP Inventory](./IP_INVENTORY.md) — Comprehensive asset list
+- 📘 [Proprietary License](./PROPRIETARY_LICENSE_AGREEMENT.md) — Non-commercial terms
+- 📘 [Commercial License](./COMMERCIAL_LICENSE_AGREEMENT.md) — Paid tier terms
 
 ---
 
