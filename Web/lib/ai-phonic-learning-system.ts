@@ -714,4 +714,7 @@ export function calculateRiskScore(prediction: AIPhonicPrediction): number {
 // EXPORTS
 // ============================================================================
 
+// Type alias for backwards compatibility
+export type AIPhonicPrediction = AIPhonics;
+
 export default AIPhonicLearningSystem;
