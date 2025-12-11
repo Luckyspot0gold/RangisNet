@@ -6,7 +6,7 @@
 
 import { describe, it, expect, beforeEach } from '@jest/globals';
 import {
-  AIPhonic LearningSystem,
+  AIPhonicLearningSystem,
   createAIPhonicSystem,
   predictFromBell,
   generateVoiceAnnouncement,
@@ -18,7 +18,7 @@ import {
 import { calculateInfinitePrecisionBell } from '../infinite-precision-bell-system';
 
 describe('AI Phonic Learning System', () => {
-  let system: AIPhonic LearningSystem;
+  let system: AIPhonicLearningSystem;
   
   beforeEach(() => {
     system = createAIPhonicSystem();

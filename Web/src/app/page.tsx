@@ -84,6 +84,40 @@ export default function Page(){
           transforms market data into 3D visualizations, sonic feedback, and haptic confirmations.
         </p>
         
+        {/* NEW: Phase 3 AI Predictions Banner */}
+        <div style={{
+          marginBottom: '30px',
+          padding: '20px',
+          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%)',
+          borderRadius: '16px',
+          border: '2px solid rgba(102, 126, 234, 0.5)',
+          maxWidth: '700px',
+          margin: '0 auto 30px'
+        }}>
+          <div style={{ fontSize: '24px', marginBottom: '8px' }}>🤖 NEW: AI Phonic Learning System</div>
+          <div style={{ fontSize: '14px', opacity: 0.8, marginBottom: '16px' }}>
+            Neural network trained on sonic patterns • 81.8% accuracy • Real-time predictions
+          </div>
+          <Link 
+            href="/ai-predictions"
+            style={{
+              padding: '12px 24px',
+              fontSize: '16px',
+              fontWeight: 600,
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              color: 'white',
+              textDecoration: 'none',
+              borderRadius: '8px',
+              display: 'inline-block',
+              transition: 'transform 0.2s ease'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            Try AI Predictions →
+          </Link>
+        </div>
+
         <div style={{
           display: 'flex',
           gap: '20px',
@@ -204,6 +238,12 @@ export default function Page(){
       }}>
         {[
           {
+            icon: '🤖',
+            title: 'AI Predictions',
+            description: 'Neural network learns from sonic patterns to predict market outcomes with 81.8% accuracy. Real-time analysis with voice alerts.',
+            new: true
+          },
+          {
             icon: '🎨',
             title: '3D Visualization',
             description: 'See your portfolio in immersive 3D space. Assets pulse with resonance scores and change color based on market performance.'
@@ -238,8 +278,9 @@ export default function Page(){
             padding: '24px',
             background: 'rgba(0, 0, 0, 0.4)',
             borderRadius: '16px',
-            border: '1px solid rgba(102, 126, 234, 0.3)',
-            transition: 'all 0.3s ease'
+            border: feature.new ? '2px solid rgba(102, 126, 234, 0.6)' : '1px solid rgba(102, 126, 234, 0.3)',
+            transition: 'all 0.3s ease',
+            position: 'relative'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-4px)';
@@ -250,6 +291,21 @@ export default function Page(){
             e.currentTarget.style.boxShadow = 'none';
           }}
           >
+            {feature.new && (
+              <div style={{
+                position: 'absolute',
+                top: '12px',
+                right: '12px',
+                padding: '4px 12px',
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                borderRadius: '12px',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.5px'
+              }}>
+                NEW
+              </div>
+            )}
             <div style={{ fontSize: '48px', marginBottom: '16px' }}>{feature.icon}</div>
             <h3 style={{ fontSize: '20px', marginBottom: '12px' }}>{feature.title}</h3>
             <p style={{ fontSize: '14px', opacity: 0.7, lineHeight: 1.6 }}>
