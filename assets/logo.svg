@@ -1,0 +1,88 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#302b63;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#24243e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#bgGrad)" rx="50"/>
+  
+  <!-- Glow effect -->
+  <circle cx="256" cy="256" r="200" fill="url(#glowGrad)" opacity="0.3"/>
+  
+  <!-- Bridge icon (stylized) -->
+  <g transform="translate(256, 180)">
+    <!-- Bridge arch -->
+    <path d="M -100 40 Q -100 -40, 0 -60 Q 100 -40, 100 40" 
+          stroke="url(#logoGrad)" 
+          stroke-width="12" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Support pillars -->
+    <rect x="-105" y="40" width="12" height="50" fill="url(#logoGrad)" rx="2"/>
+    <rect x="93" y="40" width="12" height="50" fill="url(#logoGrad)" rx="2"/>
+    
+    <!-- Sound waves -->
+    <path d="M -80 20 Q -80 0, -60 0 Q -40 0, -40 20" 
+          stroke="#48bb78" 
+          stroke-width="3" 
+          fill="none" 
+          opacity="0.7"/>
+    <path d="M 40 20 Q 40 0, 60 0 Q 80 0, 80 20" 
+          stroke="#48bb78" 
+          stroke-width="3" 
+          fill="none" 
+          opacity="0.7"/>
+  </g>
+  
+  <!-- Text "RangisNet" -->
+  <text x="256" y="340" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="url(#logoGrad)" 
+        text-anchor="middle">
+    RangisNet
+  </text>
+  
+  <!-- Frequency indicator -->
+  <text x="256" y="380" 
+        font-family="Arial, sans-serif" 
+        font-size="20" 
+        fill="#a0aec0" 
+        text-anchor="middle">
+    432 Hz
+  </text>
+  
+  <!-- Small icons around -->
+  <circle cx="140" cy="256" r="8" fill="#48bb78" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="372" cy="256" r="8" fill="#48bb78" opacity="0.8">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  
+  <!-- Avalanche badge -->
+  <circle cx="420" cy="92" r="35" fill="#e84142"/>
+  <text x="420" y="100" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        font-weight="bold" 
+        fill="white" 
+        text-anchor="middle">
+    AVAX
+  </text>
+</svg>
