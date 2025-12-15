@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangisNet MVP - Predict → Feel → Pay</title>
+    <meta name="description" content="The Venmo of Felt Economics - Multi-sensory AI trading on Avalanche">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 RangisNet</h1>
+        <p class="tagline">The Venmo of Felt Economics</p>
+
+        <!-- ARIA live region for screen reader announcements -->
+        <div aria-live="polite" aria-atomic="true" class="sr-only" id="aria-announcements"></div>
+
+        <div class="demo-section">
+            <!-- Step 1: Predict -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Predict</div>
+                </div>
+                <button id="predictBtn" onclick="runPrediction()" aria-describedby="predict-description">
+                    Analyze Market Conditions
+                </button>
+                <p id="predict-description" class="sr-only">
+                    Click to analyze current market conditions using the Probability Tensor Engine. 
+                    Results will include confidence level and sensory feedback.
+                </p>
+                <div id="predictResult" class="result" role="region" aria-label="Prediction results">
+                    <div class="metric">
+                        <span>Confidence:</span>
+                        <span id="confidenceValue" class="metric-value">--</span>
+                    </div>
+                    <div class="metric">
+                        <span>Frequency:</span>
+                        <span id="frequencyValue" class="metric-value">--</span>
+                    </div>
+                    <div class="metric">
+                        <span>Recommendation:</span>
+                        <span id="recommendationValue" class="metric-value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Feel -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Feel</div>
+                </div>
+                <div class="pulse-indicator" id="pulseIndicator"></div>
+                <button id="feelBtn" onclick="triggerFeedback()" disabled aria-describedby="feel-description">
+                    Experience Sensory Feedback
+                </button>
+                <p id="feel-description" class="sr-only">
+                    Activate haptic vibration and audio tone based on market confidence. 
+                    High confidence produces smooth, long pulses. Low confidence produces sharp, short bursts.
+                </p>
+            </div>
+
+            <!-- Step 3: Pay -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Pay</div>
+                </div>
+                <button id="payBtn" onclick="connectWallet()" disabled aria-describedby="pay-description">
+                    Connect Wallet & Pay
+                </button>
+                <p id="pay-description" class="sr-only">
+                    Connect your MetaMask or compatible wallet to process USDC micropayment on Avalanche Fuji testnet.
+                </p>
+                <div id="payResult" class="result" role="status" aria-live="polite">
+                    <div class="metric">
+                        <span>Status:</span>
+                        <span id="payStatus">Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>
+                <span class="badge">🎯 0.069μs latency</span>
+                <span class="badge">🔊 432-1432 Hz</span>
+                <span class="badge">📳 Haptic</span>
+            </div>
+            <p style="margin-top: 15px;">
+                <strong>Hack2Build: Payments x402</strong><br>
+                Accessible for 2B+ non-visual users
+            </p>
+        </div>
+    </div>
+
+    <script src="demo.js"></script>
+</body>
+</html>

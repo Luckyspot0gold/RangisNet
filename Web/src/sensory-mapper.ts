@@ -1,6 +1,11 @@
 import { PRMResult } from './types';
 
 /**
+ * Web Audio API OscillatorType
+ */
+type OscillatorType = 'sine' | 'square' | 'sawtooth' | 'triangle';
+
+/**
  * Sensory Feedback Types
  */
 export interface SensoryFeedback {
@@ -157,6 +162,34 @@ export class SensoryMapper {
       case 'WAIT': return 0.5;   // Medium
       case 'REJECT': return 0.9; // Very loud, alert
     }
+  }
+
+  /**
+   * Map PRM to frequency (for MVP compatibility)
+   */
+  mapPRMToFrequency(prm: number): number {
+    // Map 0-1 PRM to 432-1432 Hz range
+    return 432 + (prm * 1000);
+  }
+
+  /**
+   * Map PRM to haptic description (for MVP compatibility)
+   */
+  mapPRMToHaptic(prm: number): string {
+    if (prm >= 0.7) return 'Pulse (strong, confident)';
+    if (prm >= 0.5) return 'Wave (moderate, flowing)';
+    if (prm >= 0.3) return 'Buzz (weak, uncertain)';
+    return 'Alert (warning, sharp)';
+  }
+
+  /**
+   * Map PRM to phonic description (for MVP compatibility)
+   */
+  mapPRMToPhonic(prm: number): string {
+    if (prm >= 0.7) return 'Sine (calm, smooth)';
+    if (prm >= 0.5) return 'Triangle (balanced)';
+    if (prm >= 0.3) return 'Sawtooth (edgy)';
+    return 'Square (harsh, alert)';
   }
 }
 
