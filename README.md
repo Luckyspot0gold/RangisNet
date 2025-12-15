@@ -377,6 +377,31 @@ For complete IP details, see:
 
 ---
 
+## 🌐 Domain & Deployment Guides
+
+### Domain Configuration for Rangis.net
+
+- 🚀 **[Quick Vercel Domain Setup](./VERCEL_DOMAIN_SETUP.md)** — 5-minute guide for connecting your Rangis.net domain in Vercel Settings
+- 🔧 **[Complete DNS Configuration Guide](./DNS_CONFIGURATION_GUIDE.md)** — Detailed guide for Vercel DNS and Cloudflare DNS options
+- 🏗️ **[Deployment Guide](./DEPLOYMENT_GUIDE.md)** — Deploy RangisNet to production
+- 🌍 **[Dual Domain Strategy](./DUAL_DOMAIN_DEPLOYMENT.md)** — Managing multiple domains for different audiences
+
+### Quick Domain Setup
+
+If you purchased **Rangis.net** from Vercel:
+
+1. Log in to [vercel.com](https://vercel.com)
+2. Go to your RangisNet project → Settings → Domains
+3. Add `rangis.net` and `www.rangis.net`
+4. Wait 5-10 minutes for automatic DNS configuration
+5. Done! Visit `https://rangis.net`
+
+**No manual DNS setup needed** - Vercel handles everything automatically.
+
+For detailed instructions, see [VERCEL_DOMAIN_SETUP.md](./VERCEL_DOMAIN_SETUP.md)
+
+---
+
 👤 Author & Contact
 
 Justin McCrea
