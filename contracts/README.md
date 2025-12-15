@@ -13,11 +13,19 @@ The core micropayment contract enabling instant USDC payments for premium featur
 **Key Features:**
 - USDC micropayments (ERC20)
 - PRM validation integration
+- User withdrawal functionality
+- Owner access control (OpenZeppelin Ownable)
 - Event emission for tracking
 - Gas-optimized for Avalanche
 
 **Functions:**
 - `processMicropayment(uint256 amount, bytes calldata prmData)`: Process a micropayment with PRM validation
+- `withdraw(uint256 amount)`: Allow users to withdraw their credited balance
+- `ownerWithdraw(uint256 amount)`: Allow contract owner to withdraw accumulated fees
+
+**Events:**
+- `PaymentProcessed(address indexed user, uint256 amount)`: Emitted on successful payment
+- `Withdrawal(address indexed user, uint256 amount)`: Emitted on user withdrawal
 
 ## Deployment
 
@@ -46,11 +54,14 @@ const contract = new ethers.Contract(
 );
 
 // Process micropayment
-const prmData = ethers.utils.defaultAbiCoder.encode(['bool'], [true]);
+const prmData = ethers.AbiCoder.defaultAbiCoder().encode(['bool'], [true]);
 await contract.processMicropayment(
-  ethers.utils.parseUnits('1', 6), // 1 USDC
+  ethers.parseUnits('1', 6), // 1 USDC
   prmData
 );
+
+// Withdraw user balance
+await contract.withdraw(ethers.parseUnits('0.5', 6)); // Withdraw 0.5 USDC
 ```
 
 ## Testing
@@ -62,6 +73,8 @@ npx hardhat test
 
 ## Security
 
+- OpenZeppelin Ownable for access control
 - OpenZeppelin ERC20 interface for USDC
 - Input validation on all functions
+- Withdrawal mechanism for users and owner
 - Event logging for auditability
