@@ -25,7 +25,7 @@ The core micropayment contract enabling instant USDC payments for premium featur
 
 ```bash
 # Deploy contract
-cd /home/runner/work/RangisNet/RangisNet/Web/contracts
+cd Web/contracts
 npx hardhat run scripts/deploy.ts --network fuji
 ```
 
