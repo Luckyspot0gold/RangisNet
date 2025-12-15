@@ -33,7 +33,7 @@ RangisNet uses React 18.3.1 and is not affected by this React 19.x vulnerability
 
 ## Current Security Status
 
-Last audit: December 7, 2025
+Last audit: December 15, 2025
 
 ### ✅ Not Vulnerable To
 
@@ -44,19 +44,62 @@ Last audit: December 7, 2025
 
 ### ⚠️ Known Dependencies Issues
 
-Some non-critical vulnerabilities exist in development dependencies:
+**Last Updated: December 15, 2025**
 
-1. **@coinbase/wallet-sdk** - High severity (affects Thirdweb SDK)
-   - Impact: Limited to wallet connection UI
-   - Mitigation: Does not affect core functionality
-   - Plan: Update Thirdweb SDK when fix available
+Some non-critical vulnerabilities exist in transitive dependencies. These are actively monitored:
 
-2. **@openzeppelin/contracts** - Various issues
-   - Impact: Development/testing only
-   - Mitigation: Not used in production code
-   - Plan: Update when stable fixes released
+1. **@coinbase/wallet-sdk** (High)
+   - **Status**: Transitive dependency from Thirdweb SDK
+   - **Impact**: Limited to wallet connection UI, does not affect core functionality
+   - **CVE**: GHSA-8rgj-285w-qcq4
+   - **Mitigation**: Isolated to non-critical wallet UI components
+   - **Plan**: Awaiting Thirdweb SDK update to v5.x with fixes
 
-**Note:** These are transitive dependencies from Thirdweb SDK. We're monitoring for updates.
+2. **@openzeppelin/contracts** (High - Multiple CVEs)
+   - **Status**: Development and testing dependency only
+   - **Impact**: Not used in production runtime code
+   - **Affected**: GovernorCompatibilityBravo, ERC165Checker, and others
+   - **Mitigation**: Only used for contract development/testing
+   - **Plan**: Update to 5.x when stable release available
+
+3. **elliptic** (Critical - ECDSA vulnerabilities)
+   - **Status**: Transitive dependency in zksync-ethers
+   - **Impact**: Limited to specific signing operations
+   - **CVEs**: Multiple ECDSA-related issues
+   - **Mitigation**: Not used in primary transaction signing flow
+   - **Plan**: Awaiting ethers.js v6 migration in dependencies
+
+4. **ws** (High - DoS vulnerability)
+   - **Status**: Transitive dependency in Thirdweb and zksync-ethers
+   - **CVE**: GHSA-3h5v-q93c-6h6q
+   - **Impact**: WebSocket DoS with many headers (requires specific attack)
+   - **Mitigation**: Rate limiting on API endpoints
+   - **Plan**: Will resolve with dependency updates
+
+5. **axios** (High - Multiple issues)
+   - **Status**: Transitive dependency in hardhat-deploy
+   - **Impact**: Development tooling only, not in production runtime
+   - **CVEs**: CSRF, DoS, SSRF
+   - **Mitigation**: Only used during development and deployment
+   - **Plan**: Monitoring hardhat-deploy updates
+
+6. **next** (High - DoS vulnerability)
+   - **Status**: Currently on 14.2.34 (deprecated with security advisory)
+   - **CVE**: GHSA-5j59-xgg2-r9c4 (DoS with Server Components)
+   - **Impact**: Affects Server Components (which we don't use)
+   - **Mitigation**: 
+     - We use traditional API routes only, not Server Components
+     - No React Server Components (RSC) in our codebase
+     - Risk is minimal as vulnerable feature not utilized
+   - **Plan**: Upgrade to 14.2.35+ requires testing for breaking changes
+   - **Note**: Advisory available at https://nextjs.org/blog/security-update-2025-12-11
+
+**Note:** Most critical vulnerabilities are in:
+- Development dependencies (not in production bundle)
+- Transitive dependencies (limited control, monitoring for updates)
+- Features we don't use (Server Components, specific signing methods)
+
+**Current Risk Level**: LOW - No immediate exploitable vulnerabilities in production runtime.
 
 ---
 
@@ -236,9 +279,9 @@ Currently, we do not have a formal bug bounty program. However, we recognize sec
 - [x] React 18.x (avoiding React 19 RCE)
 
 ### In Progress
+- [x] Automated security scanning in CI/CD
+- [x] Dependency vulnerability monitoring (npm audit in CI)
 - [ ] Smart contract audit booking
-- [ ] Automated security scanning in CI/CD
-- [ ] Dependency vulnerability monitoring
 - [ ] Security headers optimization
 
 ### Planned
@@ -310,6 +353,6 @@ We thank the security research community for helping keep RangisNet secure. Spec
 
 ---
 
-**Last Updated:** December 7, 2025  
-**Version:** 1.0.0  
-**Next Review:** January 7, 2026
+**Last Updated:** December 15, 2025  
+**Version:** 1.0.1  
+**Next Review:** January 15, 2026
