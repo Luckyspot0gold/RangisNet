@@ -84,11 +84,15 @@ Some non-critical vulnerabilities exist in transitive dependencies. These are ac
    - **Plan**: Monitoring hardhat-deploy updates
 
 6. **next** (High - DoS vulnerability)
-   - **Status**: Updated to 14.2.34, but advisory recommends newer version
-   - **CVE**: GHSA-5j59-xgg2-r9c4
-   - **Impact**: Server Components DoS (we don't use Server Components)
-   - **Mitigation**: Traditional API routes only, no RSC
-   - **Plan**: Monitor for stable 14.2.35+ release
+   - **Status**: Currently on 14.2.34 (deprecated with security advisory)
+   - **CVE**: GHSA-5j59-xgg2-r9c4 (DoS with Server Components)
+   - **Impact**: Affects Server Components (which we don't use)
+   - **Mitigation**: 
+     - We use traditional API routes only, not Server Components
+     - No React Server Components (RSC) in our codebase
+     - Risk is minimal as vulnerable feature not utilized
+   - **Plan**: Upgrade to 14.2.35+ requires testing for breaking changes
+   - **Note**: Advisory available at https://nextjs.org/blog/security-update-2025-12-11
 
 **Note:** Most critical vulnerabilities are in:
 - Development dependencies (not in production bundle)

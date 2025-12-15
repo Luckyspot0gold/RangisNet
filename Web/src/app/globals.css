@@ -150,9 +150,7 @@ p, li, span, div {
 }
 
 /* Ensure text remains visible during webfont load */
-@font-face {
-  font-display: swap;
-}
+/* Use font-display: swap in your @font-face declarations */
 
 /* Color contrast - ensure WCAG AA compliance */
 /* Background: #1a1a2e (dark) with white text has ratio > 12:1 ✓ */

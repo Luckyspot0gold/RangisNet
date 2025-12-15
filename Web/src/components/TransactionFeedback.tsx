@@ -43,14 +43,14 @@ export default function TransactionFeedback({
     if (transaction.status === 'pending') {
       // Rising frequency for pending
       audio.update(432, 0.5, [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]);
-      triggerHapticFeedback(0.5, 'notification');
+      triggerHapticFeedback(0.5, 'warning');
     } else if (transaction.status === 'confirmed') {
       // High frequency success tone
       audio.update(540, 0.8, [1, 0.8, 0.6, 0.4, 0.2, 0.1, 0]);
       triggerHapticFeedback(1, 'success');
       
       // Announce success
-      announceConfidence(1, 'transaction completed', {
+      announceConfidence(1, 'continue', {
         ariaLive: true,
         voiceEnabled: true,
         hapticsEnabled: true,
@@ -59,10 +59,10 @@ export default function TransactionFeedback({
     } else if (transaction.status === 'failed') {
       // Low frequency warning
       audio.update(324, 0.6, [1, 0, 1, 0, 1, 0, 1]);
-      triggerHapticFeedback(0, 'error');
+      triggerHapticFeedback(0.2, 'error');
       
       // Announce failure
-      updateAriaLive(0, 'transaction failed. Please try again');
+      updateAriaLive(0.2, 'transaction failed. Please try again');
     }
 
     // Simulate progress for pending transactions

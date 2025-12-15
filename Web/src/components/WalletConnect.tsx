@@ -23,7 +23,7 @@ export default function WalletConnect({ onConnect, onDisconnect }: WalletConnect
       
       // Announce wallet connection for screen readers
       updateAriaLive(1, 'Wallet connected successfully');
-      announceConfidence(1, 'proceed with trading', {
+      announceConfidence(1, 'trade', {
         ariaLive: true,
         voiceEnabled: true,
         hapticsEnabled: true,
