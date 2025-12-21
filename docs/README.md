@@ -69,10 +69,6 @@
 
 ## 🚀 Deployment Guides
 
-### Communications & Outreach
-- **[Press Release](communications/PRESS_RELEASE.md)** – Press-safe public announcement
-- **[Pilot Outreach Email](communications/PILOT_OUTREACH_EMAIL.md)** – Template for institutional pilots (universities, accessibility labs, government agencies)
-
 ### Hosting Options
 - **[Deployment Guide](deployment/DEPLOYMENT_GUIDE.md)** – Complete deployment overview
 - **[Deploy Options](deployment/DEPLOY_OPTIONS.md)** – Vercel, Google Cloud, custom

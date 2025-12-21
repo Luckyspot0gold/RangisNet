@@ -150,7 +150,16 @@ This Risk Register identifies potential risks associated with AEAS development, 
 
 **Description:** Code vulnerabilities could expose user data, enable exploits, or damage reputation.
 
-**Current Status:** ⚠️ **60 Dependabot alerts flagged** (1 critical, 30 high, 24 moderate, 5 low)
+**Current Status:** ⚠️ **23 Dependabot alerts flagged** (3 critical, 20 high)
+
+**Critical Issues Identified (Dec 21, 2025):**
+1. **Elliptic (cryptographic library)** - Private key extraction vulnerability (CRITICAL)
+2. **Next.js** - Denial of Service with Server Components (HIGH)
+3. **WebSocket (ws)** - DoS when handling many HTTP headers (HIGH)
+4. **@coinbase/wallet-sdk** - Unknown vulnerability (HIGH)
+5. **OpenZeppelin Contracts** - Multiple governance/signature issues (HIGH)
+6. **Axios** - CSRF, DoS, SSRF vulnerabilities (HIGH)
+7. **glob** - Command injection via CLI (HIGH)
 
 **Indicators:**
 - Dependabot security alerts
@@ -160,17 +169,24 @@ This Risk Register identifies potential risks associated with AEAS development, 
 
 **Mitigation:**
 - ✅ CodeQL workflow fixed and operational (see [CODEQL_WORKFLOW_FIX.md](/CODEQL_WORKFLOW_FIX.md))
-- **URGENT:** Address 60 current vulnerabilities (see [GitHub Security](https://github.com/Luckyspot0gold/RangisNet/security/dependabot))
+- ⏳ **IN PROGRESS:** Security hardening plan created (see [SECURITY_HARDENING_PLAN.md](/SECURITY_HARDENING_PLAN.md))
+- ⏳ Phase 1: Safe automatic updates applied (npm audit fix)
+- ⏳ Phase 2: Breaking change upgrades (zksync-ethers, thirdweb, Next.js 14.2.35+)
+- ⏳ Phase 3: Post-upgrade dependency review
 - Staged deployment (dev → staging → production)
 - Regular dependency audits
 - Penetration testing before public launch
 - Security incident response plan
 
 **Action Items:**
-- [ ] **CRITICAL:** Remediate 1 critical + 30 high vulnerabilities within 7 days
-- [ ] Enable Dependabot auto-updates for low-risk patches
-- [ ] Schedule quarterly security audit
-- [ ] Implement rate limiting and input validation
+- [ ] **URGENT:** Upgrade zksync-ethers to fix critical elliptic vulnerability (by Dec 22)
+- [ ] **HIGH:** Upgrade Next.js to 14.2.35+ (by Dec 22)
+- [ ] **HIGH:** Upgrade thirdweb to fix @coinbase/wallet-sdk (by Dec 23)
+- [ ] **MEDIUM:** Upgrade LayerZero packages to fix OpenZeppelin issues (by Dec 23)
+- [ ] Test all functionality after each upgrade
+- [ ] Document any remaining vulnerabilities accepted as risks
+- [ ] Enable Dependabot auto-updates for low-risk patches (by Dec 24)
+- [ ] Schedule quarterly security audit (Q1 2026)
 
 ---
 
