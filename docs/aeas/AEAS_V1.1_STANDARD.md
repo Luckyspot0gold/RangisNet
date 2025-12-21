@@ -683,6 +683,10 @@ Traffic flow, resource distribution, and infrastructure health map to ambient en
 
 EcoVerse and compatible simulations must accept Truth Feeds, enabling hybrid real/simulated perception for training and experimentation.
 
+#### 12.3.6 Medical and Therapeutic Devices
+
+Integration with health monitors allows therapeutic grounding (e.g., calming haptic during overload) under medical supervision.
+
 ### 12.4 Embodiment Endpoints
 
 The participant experiences economic reality through devices and environments already present in daily life.
@@ -699,9 +703,9 @@ Vehicles become mobile economic sensors. Steering wheel, seat, and ambient syste
 
 Homes, offices, and public spaces embed transducers in furniture or architecture. Large-scale flows (e.g., national energy stability) become subtly perceivable as background resonance.
 
-#### 12.4.4 Medical and Therapeutic Devices
+#### 12.4.4 Modular Component Approach
 
-Integration with health monitors allows therapeutic grounding (e.g., calming haptic during overload) under medical supervision.
+Endpoints may implement single modalities (e.g., auditory-only) for low-cost entry, scaling to full multi-sensory as needed.
 
 ### 12.5 The Interoperability Protocol
 
