@@ -3,9 +3,9 @@
 **Complete File Listing for AEAS v1.1 Documentation Suite**
 
 **Date Created**: December 21, 2025  
-**Last Updated**: December 21, 2025 (Annex US-1 added)  
+**Last Updated**: December 21, 2025 (Auditory + Olfactory chapters expanded)  
 **Total Files**: 14 core documents  
-**Total Words**: ~60,000+  
+**Total Words**: ~76,000+  
 **Total Citations**: 48+ academic and institutional references
 
 ---
@@ -16,14 +16,26 @@
 - **Filename**: `AEAS_V1.1_STANDARD.md`
 - **Type**: Technical specification
 - **Chapters**: 15
-- **Length**: ~15,000 words
+- **Length**: ~17,000 words (expanded from ~15,000)
 - **Purpose**: Complete technical standard with all Venice AI refinements
 - **Audience**: Developers, engineers, certification auditors
 - **Key Sections**:
   - Ch 1-2: Philosophy & "Is" Mandate
-  - Ch 3-8: Sensory mappings (audio/haptic/visual)
-  - Ch 9-12: AI, training, compliance, interoperability ⭐ (v1.1 refined)
-  - Ch 13-15: Future domains, M3 implementation, appendices
+  - Ch 3-5: Sensory domains, mathematical constraints, economic volume
+  - Ch 6: **Auditory Economic Cognition** ⭐ (v1.1 expanded - comprehensive framework)
+  - Ch 7-8: Haptic and visual mappings
+  - Ch 9-12: AI, training, compliance, interoperability
+  - Ch 13: **Future Domains** ⭐ (v1.1 olfactory expanded - safety-first framework)
+  - Ch 14-15: M3 implementation, appendices
+- **New in this update**:
+  - Chapter 6 expanded to comprehensive Auditory Economic Cognition framework
+  - Prohibition of emotional tonality (no major/minor keys for "good/bad")
+  - Anti-addiction design (no variable-ratio rewards)
+  - Multi-asset auditory scenes with spatial placement
+  - Chapter 13.1 expanded to comprehensive Olfactory & Chemical Signaling framework
+  - Simulation-only default mandate
+  - Absolute prohibitions against manipulation
+  - Physiological safety constraints
 
 ---
 

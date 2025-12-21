@@ -22,7 +22,7 @@
 3. [Sensory Domains & Mappings](#3-sensory-domains--mappings)
 4. [Mathematical Constraints](#4-mathematical-constraints)
 5. [The Economic Volume](#5-the-economic-volume)
-6. [Auditory Mappings](#6-auditory-mappings)
+6. [Auditory Economic Cognition](#6-auditory-economic-cognition)
 7. [Haptic Mappings](#7-haptic-mappings)
 8. [Visual Mappings](#8-visual-mappings)
 9. [AI Interpreter Layer](#9-ai-interpreter-layer)
@@ -204,38 +204,120 @@ Multiple assets occupy the same volume simultaneously. Users can:
 
 ---
 
-## 6. Auditory Mappings
+## 6. Auditory Economic Cognition
 
-### 6.1 The 7-Bell Harmonic System
+### 6.1 The Principle of Harmonic State Representation
 
-**Baseline**: 432 Hz (natural harmonic frequency)
+Auditory cognition translates the dynamics of economic reality into the language of sound: frequency, harmony, rhythm, timbre, and spatial placement. The core principle is to represent the *current state* of an economic variable, not a narrative about it or a prediction of its future.  
 
-**Bell Frequencies**:
-1. Bell 1: 216 Hz (Whale_Splash - large transactions)
-2. Bell 2: 288 Hz (Tax_Axe - regulatory pressure)
-3. Bell 3: 360 Hz (Trumpet_Dumpet - sell pressure)
-4. Bell 4: 432 Hz (Baseline/Value)
-5. Bell 5: 504 Hz (Momentum)
-6. Bell 6: 648 Hz (Volatility)
-7. Bell 7: 864 Hz (Market_Melee character)
+The goal is to create an ambient, informative soundscape that can be perceived passively in the background or focused upon for detailed analysis—without ever inducing panic, euphoria, false urgency, or a deceptive sense of security. Sound is a resonant mirror of economic reality, not a storyteller.
 
-### 6.2 Frequency Modulation (FM) Mappings
+### 6.2 The Core Auditory Mappings
 
-| Economic Signal | Audio Parameter | Range | Perception |
-|-----------------|----------------|-------|------------|
-| **Price/Value** | Base Frequency | 216-864 Hz | Pitch |
-| **Momentum** | Rhythmic Pulse | 0.5-8 Hz | Beat rate |
-| **Volatility** | FM Depth | 0-50% deviation | Tremolo/vibrato |
-| **Volume** | Amplitude | 0-100 dB | Loudness |
-| **Whale Activity** | Sub-bass | 20-60 Hz | Chest resonance |
+To ensure consistency, universality, and prevention of deception, AEAS defines a standardized, non-negotiable mapping of core economic variables to auditory properties. Implementations may extend these mappings but must preserve the baseline relationships.
 
-### 6.3 Spatial Audio (3D Soundscape)
+#### 6.2.1 Baseline Carrier Frequency
 
-**Requirement**: Support for binaural/spatial audio positioning.
+The neutral or equilibrium state of any economic variable is represented by a stable carrier tone centered at **432 Hz** (or a culturally equivalent baseline frequency, adjustable for regional perceptual norms). This carrier provides a perceptual anchor of stability. Different asset classes or economic domains may use harmonically related base frequencies (e.g., 108 Hz for commodities, 216 Hz for currencies) to allow simultaneous perception without destructive interference.
 
-- **Left-Right**: Asset category (e.g., DeFi left, NFTs right)
-- **Front-Back**: Time (recent events forward, historical back)
-- **Up-Down**: Value (high-value assets higher in soundscape)
+#### 6.2.2 Volatility as Frequency Modulation (FM)
+
+Volatility (rate and magnitude of change) is represented by frequency modulation of the carrier tone.  
+- **Low volatility**: Slow, gentle vibrato (modulation depth <5%).  
+- **High volatility**: Rapid, wide modulation (depth up to 50%).  
+
+The modulation index is directly proportional to the standard deviation of returns over a defined window. This mapping is mathematically isomorphic to preserve truth.
+
+#### 6.2.3 Momentum as Rhythmic Pulse
+
+Sustained directional movement is represented by a subtle rhythmic pulse layered onto the carrier.  
+- **Positive momentum**: Pulse in phase with the carrier.  
+- **Negative momentum**: Pulse phase-shifted or in a lower octave.  
+- **Intensity of pulse**: Corresponds to momentum strength.  
+
+The pulse ceases when momentum neutralizes, providing immediate perceptual feedback of regime change.
+
+#### 6.2.4 Volume/Throughput as Amplitude
+
+Trading volume or economic throughput is represented by overall amplitude (loudness). Higher volume produces a stronger signal. Amplitude is hard-capped at safe, non-startling levels (e.g., 75 dB peak) to prevent coercion or auditory harm.
+
+#### 6.2.5 Anomaly as Timbral Shift
+
+Structural or non-standard events (e.g., liquidity freeze, flash event) are represented by a distinct timbral change (e.g., introduction of controlled harmonic distortion or "grit"). This provides immediate, pre-attentive awareness without emotional overlay.
+
+### 6.3 The Architecture of Non-Deceptive Sound
+
+Auditory design must actively prevent manipulation while preserving informational richness.
+
+#### 6.3.1 Prohibition of Emotional Tonality
+
+The use of musical scales, keys, or intervals to imply emotional valence is strictly forbidden.  
+- No major/minor keys to signal "good/bad."  
+- No intentional dissonance (e.g., tritone) to imply "danger."  
+
+Complexity arises from signal fidelity, not engineered emotional response.
+
+#### 6.3.2 Anti-Addiction and Anti-Coercion Design
+
+- No variable-ratio reward patterns (e.g., celebratory chimes for gains).  
+- No escalating urgency unrelated to attested risk (e.g., accelerating tempo during calm states).  
+- **Mandatory periodic silence** (>500 ms every 30 seconds in continuous output) to prevent habituation.
+
+#### 6.3.3 The Neutral "Clean" State
+
+When data is absent (market closed, asset delisted), the system must emit a distinct neutral tone (pure, unmodulated 432 Hz sine) rather than silence. Silence is ambiguous; the clean tone clearly signals "no live signal."
+
+### 6.4 Multi-Asset and Multi-Domain Auditory Scenes
+
+Participants will perceive multiple signals simultaneously. AEAS provides mechanisms for coherent, non-chaotic soundscapes.
+
+#### 6.4.1 Spatial Auditory Placement
+
+Different assets or domains are positioned in a virtual 3D auditory field (left/right, front/back, high/low). This allows intuitive localization of activity without visual attention.
+
+#### 6.4.2 Harmonic Grouping
+
+Related assets share subtle low-frequency undertones, enabling perception of sector or portfolio health as a unified resonance.
+
+#### 6.4.3 Layering and Focus Modes
+
+Systems must support user-controlled layering:  
+- **Ambient mode**: All signals blended at low intensity.  
+- **Focus mode**: Single asset isolated with full fidelity.
+
+### 6.5 Auditory Interfaces and Embodiments
+
+The auditory signal adapts to context and participant needs.
+
+#### 6.5.1 Market Radio Stations
+
+Continuous, ambient streams of specific markets or portfolios, designed for passive awareness (like environmental sounds).
+
+#### 6.5.2 Vehicular and Environmental Integration
+
+Subtle integration into vehicle audio or smart environments, volume-adjusted for context (e.g., reduced during high-speed driving).
+
+#### 6.5.3 Personalized Orbs
+
+Focused, meditative listening to a single asset for deep analysis.
+
+### 6.6 Auditory Accessibility and Customization
+
+While core mappings are fixed for consistency, customization is permitted within strict bounds.
+
+#### 6.6.1 Frequency Range Shifting
+
+For hearing-impaired participants, the entire spectrum may be transposed while preserving relationships.
+
+#### 6.6.2 Timbre Neutrality
+
+Users may select emotionally neutral timbres (e.g., sine, soft pad) without altering informational carriers.
+
+#### 6.6.3 Volume and Mix Control
+
+Full participant control over master volume and individual asset mixing.
+
+**Summary**: Auditory cognition, when implemented under these constraints, becomes a powerful, universal channel for economic truth—resonating state without deception, accessible to all who can hear
 
 ---
 
@@ -521,18 +603,62 @@ The **EcoVerse** is a mandatory training simulation where users learn to perceiv
 
 ## 13. Future Domains
 
-### 13.1 Olfactory (Future-Safe)
+### 13.1 Olfactory & Chemical Signaling (Future Domain)
 
-**Concept**: Economic signals mapped to scent.
+#### 13.1.1 The Principle of Reserved Augmentation
 
-**Potential Mappings**:
-- **Value**: Scent intensity (faint→strong)
-- **Momentum**: Release rate (slow→fast puffs)
-- **Volatility**: Scent complexity (single→multi-note)
+Olfactory and chemical signaling engages the most primal and direct pathway to human memory, emotion, and autonomic response. The sense of smell bypasses much of the cognitive filtering that protects other modalities, linking directly to limbic structures associated with survival, association, and feeling.  
 
-**Challenges**: Olfactory bandwidth is low; scent lingers. Not viable for real-time yet.
+Because of this extraordinary potency, AEAS treats olfactory signaling as an inherently high-risk domain. It is not a standard feature of economic cognition but a reserved, optional augmentation, subject to the strictest ethical, safety, and transparency constraints. By default, its use is restricted to controlled simulation environments.
 
-**Status**: Reserved for future research.
+#### 13.1.2 The Default Mandate: Simulation-Only Implementation
+
+In all standard and institutional deployments, olfactory signaling shall remain **disabled** by default. Activation in real-world contexts requires explicit, informed, and revocable consent from the sentient participant.
+
+**Primary Domain: The EcoVerse Simulation & Training Environment**  
+Olfactory cues are permitted within simulation environments (Chapter 10) for the purpose of safe, experiential learning. In this sandbox, abstract, non-naturally occurring scents may be associated with specific economic states to accelerate intuitive pattern recognition. Example: A neutral, synthetic scent profile linked to the concurrent presence of high volatility, low liquidity, and negative momentum. This conditioning occurs without real-world risk and serves only to train perceptual accuracy.
+
+**Limited Real-World Exceptions**  
+Outside simulation, olfactory signaling is restricted to two narrowly defined, non-manipulative use cases:  
+
+1. **Therapeutic Grounding**: Upon explicit user command, the system may release a neutral, calming scent (e.g., lavender or sandalwood equivalents) to assist in cognitive recovery from sensory overload. This is a participant-initiated intervention, never system-initiated.  
+
+2. **Critical Systemic Alert**: In the event of a verified, civilization-scale economic emergency (e.g., coordinated infrastructure failure with attested cascading effects), a single, sharp, unmistakable scent (e.g., ozone-like or acrid) may be deployed as a final-tier alert. This functions as an olfactory "defibrillator" and must be reserved for events meeting pre-defined, auditable severity thresholds.
+
+#### 13.1.3 Absolute Prohibitions and Safeguards
+
+The potential for olfactory signaling to bypass rational filters demands absolute prohibitions against misuse.
+
+**Prohibition of Emotional or Behavioral Manipulation**  
+The system is forbidden from using scents to induce emotional states tied to economic decision-making. No scent may be deployed to create comfort during risk, urgency during calm, or reward during gain.
+
+**Prohibition of Conditioning Loops**  
+Olfactory cues must not be used to establish addictive or compulsive patterns. Variable-ratio reinforcement, reward-based scent release, or any form of operant conditioning is strictly prohibited.
+
+**Prohibition of Covert Deployment**  
+Any olfactory output must be preceded by clear, multi-modal notification (visual, auditory, and haptic) stating: "Olfactory signal initiating." The participant must remain consciously aware of chemical influence.
+
+**The Right to Clean Air**  
+Every participant possesses an irrevocable right to permanently disable the olfactory channel at the hardware or software level. This override must be absolute and cannot be circumvented by any application, institution, or third party.
+
+#### 13.1.4 Physiological and Safety Constraints
+
+Olfactory systems interact with human chemistry. Safety is paramount.
+
+**Concentration Limits**  
+Released compounds must remain below established safety thresholds (e.g., OSHA/NIOSH guidelines for airborne chemicals). No allergenic or irritant substances permitted without explicit medical clearance.
+
+**Duration and Frequency Limits**  
+Olfactory events must be brief (<30 seconds) and spaced sufficiently (>5 minutes) to prevent desensitization or physiological stress.
+
+**Participant Health Profiling**  
+Systems must query and respect user-provided health data (e.g., asthma, chemical sensitivities, pregnancy) and refuse activation if contraindicated.
+
+#### 13.1.5 Future-Safe Framework
+
+This chapter deliberately constrains a powerful domain to protect human agency while preserving a pathway for responsible evolution. As delivery mechanisms improve (e.g., precise, non-invasive scent synthesis), the standard allows controlled expansion—always beginning in simulation, always governed by consent and transparency.
+
+**Olfactory signaling may one day become a subtle, enriching layer of economic perception. Until then, AEAS ensures it remains a tool of clarity, never a vector of control.**
 
 ### 13.2 Gustatory (Speculative)
 
