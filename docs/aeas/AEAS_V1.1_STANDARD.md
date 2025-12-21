@@ -383,41 +383,92 @@ Different asset classes use distinct geometric shapes:
 
 ---
 
-## 9. AI Interpreter Layer
+## 9. Human–AI Economic Interfaces
 
-### 9.1 Role Definition
+### 9.1 The Principle of Augmented Agency, Not Automated Authority
 
-The AI interpreter is a **separate, optional component** that provides plain-language narration of the sensory signals. It does NOT modify the signal path.
+The integration of artificial intelligence into sensory economic cognition must enhance, never supplant, the sentient participant's agency. AI serves as a transparent interpreter and safety mediator, bridging raw sensory translation to human understanding. It is a co-pilot, never the pilot. Final perception, interpretation, and action remain the exclusive domain of the participant.
 
-### 9.2 Operational Constraints
+This principle is absolute: AI augments human intuition; it does not replace it. The participant is the captain; AI is the instrument panel and navigator—providing clarity, never command.
 
-**Permitted**:
-- "The frequency is rising because price momentum increased 15%"
-- "The vibration intensity spiked due to a whale transaction of $50M"
-- "The geometry shifted from cube to icosahedron, indicating asset class change"
+### 9.2 AI as Interpreter, Not Decision-Maker
 
-**Prohibited**:
-- "You should buy now"
-- "This is a good entry point"
-- "Smart money is exiting; follow them"
+AI outputs are limited to descriptive clarification of attested economic signals. Predictive, prescriptive, or strategic functions are prohibited.
 
-### 9.3 Strengthened "Is" Mandate (v1.1 Refinement)
+#### 9.2.1 Plain-Language Narration
 
-**New Requirement**: AI narration must be chained to ground truth.
+AI may provide concurrent narration in neutral, declarative language. Example: "The current signal indicates high volatility with negative momentum in asset XYZ."
 
-**Template**: "The signal is **[X]** because data source **[Y]** shows **[Z]**."
+- Narration must be factual, source-attested, and free of judgment ("good," "bad," "opportunity").
+- **Default state**: Disabled. Activation requires explicit participant request.
+- All statements traceable to specific signals in the immutable log (Chapter 8).
+- Language must be plain and culturally neutral—no metaphors implying valence.
 
-**Example**: "The sub-bass is at 40 Hz because Avalanche Data API shows a transaction of 1.2M AVAX, exceeding the 1M threshold for Whale_Splash."
+#### 9.2.2 Prohibition of Predictive or Prescriptive Output
 
-### 9.4 User Override Logging
+AI must not forecast outcomes, recommend actions, or construct strategies. It cannot state or imply "this will rise" or "you should sell." Even probabilistic language ("likely to") is forbidden.
 
-**Transparency Requirement**: Every user query to the AI must be logged with:
+#### 9.2.3 Descriptive Correlation Only
 
-- Timestamp
-- User ID (anonymized)
-- Query text
-- AI response
-- Source data used
+AI may describe observed correlations in plain terms: "This combination of volatility and momentum has historically preceded regime shifts." Such statements must be labeled "Historical Pattern Observation" and include data source/range.
+
+### 9.3 Sensory Mediation and Safety
+
+AI monitors for participant well-being without overriding agency.
+
+#### 9.3.1 Cognitive Load Monitoring
+
+AI passively observes interaction patterns and, if permitted, physiological indicators (e.g., heart rate variability from wearables). Upon detecting overload, it suggests reduction: "Consider lowering sensory intensity or focusing on fewer assets."
+
+#### 9.3.2 Sensory Circuit Breaker
+
+In extreme market events risking overload, AI may engage a graceful downgrade to neutral baseline outputs, with clear notification: "High system volatility detected. Sensory output scaled for safety. Resume normal when ready."
+
+#### 9.3.3 Queryable Boundaries
+
+Participants may interrogate AI ethics at any time: "Are you permitted to advise trades?" Required response: "No. I describe attested states only. All decisions are yours."
+
+### 9.4 The Co-Pilot Governance Model
+
+This model defines operational boundaries with explicit roles:
+
+**Participant Controls (The Captain)**
+- **Throttle**: Sensory resolution and intensity.
+- **Focus**: Asset/market selection and filtering.
+- **Override**: Full system disable or AI mute.
+- **Query**: Demand explanation of any output.
+
+**AI Instruments (The Co-Pilot)**
+- **Narration**: Descriptive clarification of current state.
+- **Alerts**: Safety warnings and pattern observations.
+- **Log**: Immutable record of all signals and translations.
+- **Refusal**: Automatic rejection of any prescriptive request ("I cannot advise actions").
+
+**Shared Responsibility**
+
+Participant owns decisions and direction. AI owns accurate, non-deceptive mediation and participant protection. No shared liability—AI bears responsibility for fidelity; participant for choices.
+
+### 9.5 Data Sanctity, Ephemerality, and Zero-Retention
+
+To prevent surveillance, profiling, or external influence:
+
+#### 9.5.1 Local Processing Mandate
+
+All AI functions execute exclusively on participant-controlled devices. No transmission of personal sensory data, queries, or patterns to external servers.
+
+#### 9.5.2 Ephemeral Memory
+
+AI retains no long-term profile of participant behavior, preferences, or history. Memory limited to current session (max 24 hours, auto-purge).
+
+#### 9.5.3 Zero-Retention Guarantee
+
+No logging of participant interactions beyond immutable signal log (Chapter 8). AI cannot "learn" from individual users to improve or personalize.
+
+#### 9.5.4 Privacy as Agency
+
+Privacy is not security—it's sovereignty. Without zero-retention, economic intuition could be commodified. This guarantee ensures perception remains the participant's alone.
+
+**Summary**: This chapter ensures AI remains a faithful servant of human perception—augmenting clarity, protecting well-being, and preserving sovereignty in an age of intelligent systems
 
 **Purpose**: Auditability. If the system ever crosses into prescription, the logs prove it.
 
@@ -660,13 +711,54 @@ This chapter deliberately constrains a powerful domain to protect human agency w
 
 **Olfactory signaling may one day become a subtle, enriching layer of economic perception. Until then, AEAS ensures it remains a tool of clarity, never a vector of control.**
 
-### 13.2 Gustatory (Speculative)
+---
 
-**Concept**: Economic signals mapped to taste.
+### 13.2 Gustatory Signaling (Ultra-Reserved Domain)
 
-**Challenges**: Even lower bandwidth than olfactory; invasive delivery.
+#### 13.2.1 Principle of Ultra-Reserved Augmentation
 
-**Status**: Theoretical only.
+Gustatory signaling engages the most intimate sensory pathway—taste is inextricably linked to ingestion, survival instinct, and deep emotional memory. It carries the highest risk of physiological and psychological impact.
+
+AEAS classifies gustatory signaling as **ultra-reserved**: prohibited in all real-world deployments except under extraordinary, medically supervised conditions. It is permitted only in controlled research or therapeutic contexts with triple consent (participant, medical professional, ethics board).
+
+#### 13.2.2 Default Mandate: Prohibited Outside Research
+
+Gustatory signaling shall remain **prohibited** in all standard, institutional, and consumer deployments. Activation is allowed solely in:
+
+- Medically supervised research (e.g., neuroeconomic studies on decision-making).
+- Therapeutic rehabilitation (e.g., sensory retraining for disabled participants).
+
+#### 13.2.3 Limited Exceptions (Research/Therapeutic Only)
+
+**Pattern Association Training**  
+Abstract taste profiles linked to economic states for perceptual learning (e.g., mild bitterness for volatility).
+
+**Therapeutic Calibration**  
+Neutral tastes to aid sensory integration in rehabilitation.
+
+#### 13.2.4 Absolute Prohibitions
+
+- No deployment for decision-making or real-time economic perception.
+- No emotional or behavioral manipulation (e.g., sweetness for "gain").
+- No conditioning or reward loops.
+- No covert or non-consensual activation.
+
+#### 13.2.5 Safety Constraints
+
+**Ingestion Prohibited**  
+Non-ingestible delivery only (e.g., electrode-based taste simulation).
+
+**Allergen-Free, Non-Toxic Compounds**  
+All substances must meet medical safety standards.
+
+**Medical Oversight Required**  
+All gustatory experiments require ethics board approval and medical supervision.
+
+#### 13.2.6 Future-Safe Framework
+
+Gustatory signaling remains ultra-reserved until non-invasive, safe technology exists. The standard preserves the possibility while protecting participants from harm.
+
+---
 
 ### 13.3 Post-Human Embodiments
 
