@@ -1,0 +1,11 @@
+{
+  "audit": {
+    "ws": {
+      "GHSA-3h5v-q93c-6h6q": {
+        "active": true,
+        "notes": "DoS vulnerability in ws server when handling many HTTP headers. Not applicable - ws used only client-side via browser WebSocket API wrappers (WalletConnect, Thirdweb). No server-side WebSocket handling in this application. Dependencies (ethers, viem) pull in old versions.",
+        "expiry": "2026-12-31"
+      }
+    }
+  }
+}
