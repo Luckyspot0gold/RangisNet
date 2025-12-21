@@ -4,6 +4,12 @@
 
 ---
 
+## 🔔 Call for Public Comment
+
+**AEAS v1.x is open for review.** We invite researchers, accessibility professionals, engineers, regulators, and the public to provide feedback on the standard. See [CALL_FOR_COMMENT.md](/CALL_FOR_COMMENT.md) for details on how to participate.
+
+---
+
 ## 🎯 Start Here
 
 **New to RangisNet?**  
@@ -62,6 +68,10 @@
 ---
 
 ## 🚀 Deployment Guides
+
+### Communications & Outreach
+- **[Press Release](communications/PRESS_RELEASE.md)** – Press-safe public announcement
+- **[Pilot Outreach Email](communications/PILOT_OUTREACH_EMAIL.md)** – Template for institutional pilots (universities, accessibility labs, government agencies)
 
 ### Hosting Options
 - **[Deployment Guide](deployment/DEPLOYMENT_GUIDE.md)** – Complete deployment overview
@@ -157,7 +167,24 @@
 
 ---
 
-## 🛠️ Scripts & Utilities
+## � Operational Documents
+
+### Risk Management
+- **[Risk Register](RISK_REGISTER.md)** – Living risk assessment document
+  - 10 identified risks with likelihood/impact ratings, mitigation strategies, and action items
+  - **Read this if:** You're responsible for security, compliance, stakeholder communication, or operational planning
+
+### Public Engagement
+- **[Call for Comment](/CALL_FOR_COMMENT.md)** – Public review process for AEAS v1.x
+  - How to submit feedback, who should comment, what we're seeking input on
+  - **Read this if:** You want to contribute to AEAS development or understand the review process
+
+### Communications
+See [docs/communications/](communications/) for press releases and outreach templates
+
+---
+
+## �🛠️ Scripts & Utilities
 
 All shell scripts have been moved to the `/scripts` directory for easier management.
 

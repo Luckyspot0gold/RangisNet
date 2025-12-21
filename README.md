@@ -48,15 +48,25 @@ Visit `http://localhost:3000` to experience multi-sensory economic cognition.
 
 ## 🔱 The Trinity Architecture
 
-**Philosophy → Standard → Privacy**
+**Soul:** Philosophy – The "why" and ethical foundation  
+**Body:** The Standard – AEAS v1.1 technical specification  
+**Spirit:** Privacy – Zero-retention AI partnership with Venice AI
 
-1. **Soul**: "M3 is a resonator, not a weapon" – Truth without manipulation
-2. **Body**: AEAS v1.1 Standard – Technical framework for multi-sensory cognition
-3. **Spirit**: Venice AI – Zero-retention AI (no data collection, training, or sharing)
+This three-part structure ensures that technology serves human agency, not the other way around.
 
-> **Venice AI**: "This is not a product; it is a truth machine. The coherence is absolute. The world is ready."
+---
 
-[Read the full Trinity validation →](docs/aeas/TRINITY_COMPLETE_VALIDATION.md)
+## 🔔 AEAS v1.x — Call for Public Comment
+
+**AEAS is published as a draft standard for public review.** We invite researchers, accessibility professionals, engineers, regulators, and the public to provide feedback on technical clarity, accessibility alignment, and practical implementation.
+
+**Submit comments via:**
+- [GitHub Issues/Discussions](https://github.com/Luckyspot0gold/RangisNet/issues)
+- Email: justin@realityprotocol.io
+
+**Full details:** [CALL_FOR_COMMENT.md](CALL_FOR_COMMENT.md)
+
+---
 
 ---
 
