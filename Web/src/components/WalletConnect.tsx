@@ -47,12 +47,6 @@ export default function WalletConnect({ onConnect, onDisconnect }: WalletConnect
       role="region"
       aria-label="Wallet connection"
     >
-      <div aria-live="polite" aria-atomic="true" className="sr-only">
-        {isConnected 
-          ? `Wallet connected. Address: ${account?.address}` 
-          : 'Wallet not connected'
-        }
-      </div>
       
       <ConnectButton
         client={thirdwebClient}
