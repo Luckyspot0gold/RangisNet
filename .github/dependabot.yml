@@ -1,11 +1,90 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# Dependabot Configuration for RangisNet
+# Automatically checks for dependency updates and security vulnerabilities
+# Place this file at: .github/dependabot.yml in your repository
 
-version: 2.0
+version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # NPM dependencies (JavaScript/TypeScript)
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "Luckyspot0gold"
+    labels:
+      - "dependencies"
+      - "security"
+    commit-message:
+      prefix: "fix"
+      prefix-development: "chore"
+      include: "scope"
+    # Group minor and patch updates together
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    # Ignore specific packages if needed
+    ignore:
+      # Example: ignore major version updates for specific packages
+      # - dependency-name: "react"
+      #   update-types: ["version-update:semver-major"]
+    
+  # Python dependencies (if applicable)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "Luckyspot0gold"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "fix"
+      include: "scope"
+    # Only run if requirements.txt or setup.py exists
+    
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "Luckyspot0gold"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+# Security-focused configuration
+# Dependabot will:
+# 1. Check for vulnerabilities weekly
+# 2. Create PRs for security updates immediately
+# 3. Group non-security updates to reduce PR noise
+# 4. Auto-assign you as reviewer
+# 5. Label PRs for easy filtering
+
+# After adding this file:
+# 1. git add .github/dependabot.yml
+# 2. git commit -m "chore: add Dependabot configuration for security updates"
+# 3. git push
+# 4. Dependabot will start scanning within 24 hours
+# 5. Review and merge PRs as they come in
